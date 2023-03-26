@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap");
+
+* {
+  font-family: "Tajawal";
+}
+
+.container {
+  max-width: 80rem;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border: 1px solid violet;
+}
+
+/* HEADER  TOP */
+
+.top-header-container {
+}
+
+.top-header-wrapper {
+  background-color: red;
+  height: 4rem;
+  background-color: black;
+  border-bottom: 1px solid rgb(170, 163, 163);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.header-signup__btn {
+  background-color: #fc3b00;
+  color: white;
+  padding: 0.4rem 1.4rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.header-search-container {
+  position: relative;
+  flex-basis: 50%;
+}
+
+.header-search__input {
+  width: 100%;
+  background: #202326;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  padding-left: 2rem;
+  outline: none;
+}
+
+.header-search__input::placeholder {
+  font-weight: 600;
+}
+
+.header-logo-container {
+  position: relative;
+  height: 100%;
+}
+
+.header-logo__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* HEADER  BOTTOM */
+
+.bottom-header-container {
+}
+
+.bottom-header-wrapper {
+  display: flex;
+  height: 38rem;
+  width: 100%;
+  background-color: #202326;
+}
+
+.header-content-slider {
+  position: relative;
+  flex-basis: 100%;
+  height: 100%;
+}
+
+.header-content__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* INTRO SONGS */
+
+.intro-songs-container{}
+.intro-songs-wrapper{}
+.intro-song-content{}
+.intro-song__views{}
+.intro-song__name{}
+.intro-song__artist{}
+.intro-song__img{}
+.intro-song__prograss{}
+
+
+
+/* RESPONSIVE */
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* additional media query`s */
+
+@media only screen and (max-width: 1280px) {
+  .bottom-header-wrapper {
+    height: 31rem;
+  }
+}
