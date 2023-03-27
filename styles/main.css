@@ -99,6 +99,7 @@ body {
 /* INTRO SONGS */
 
 .intro-songs-container {
+  margin: 2rem 9rem;
 }
 .intro-songs-wrapper {
 }
@@ -106,13 +107,12 @@ body {
 .intro-song-content {
   display: grid;
   position: relative;
-  grid-template-rows: repeat(2, 5rem);
+  grid-template-rows: repeat(2, 4rem);
   grid-template-columns: repeat(2, 1fr);
-  max-width: 33rem;
+  max-width: 50%;
   border-radius: 0.3rem;
   background-color: #101316;
-  padding: 1.4rem;
-  margin: 2rem;
+  padding: 1.4rem 0;
 }
 
 .intro-song-infos {
@@ -120,7 +120,7 @@ body {
   display: grid;
   align-self: center;
   height: 6rem;
-  width: 12rem;
+  padding-left: 1.4rem;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
 }
@@ -159,13 +159,25 @@ body {
   border-radius: 0.6rem;
 }
 
-.intro-song__views {
+.intro-song__play {
   grid-column: 2/3;
   justify-self: center;
   align-self: center;
   color: gray;
-  font-size: 13px;
+  font-size: 29px;
   padding-top: 1rem;
+  padding-left: 3rem;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.intro-song__play i {
+  transition: 0.4s ease;
+}
+
+.intro-song__play i:hover {
+  transform: translateY(-1px) scale(1.09);
+  color: #c13106;
 }
 
 .intro-song__prograss {
@@ -177,8 +189,9 @@ body {
   padding: 0 2rem;
   height: 5px;
   width: 75%;
-  background: #fc3b00;
+  background: #3e4042;
   border-radius: 0.4rem;
+  margin-top: 4rem;
   cursor: pointer;
 }
 
@@ -188,7 +201,7 @@ body {
   height: 100%;
   width: 85%;
   transition: 0.4s ease;
-  background: #111;
+  background: #c13106;
 }
 
 .intro-prograss__fit::after {
@@ -200,7 +213,33 @@ body {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  border: 4px solid orange;
+  background: #fff;
+  padding: 2px;
+}
+
+.intro-current-time {
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  color: #c13106;
+  text-shadow: 0 0 1px #fff;
+}
+
+.intro-duration-time {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  color: #c13106;
+  text-shadow: 0 0 1px #fff;
+}
+
+.swiper-button-next {
+  /* opacity: 0; */
+  /* display: none; */
+}
+.swiper-button-prev {
+  /* opacity: 0; */
+  /* display: none; */
 }
 
 /* RESPONSIVE */
