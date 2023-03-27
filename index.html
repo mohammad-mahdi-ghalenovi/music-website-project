@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
+    <audio
+      class="main-audio"
+      style="position: absolute; height: 0; width: 0; z-index: -9"
+    ></audio>
+
     <header>
       <section class="top-header-container">
         <div class="top-header-wrapper">
@@ -27,7 +32,7 @@
               class="header-search__input"
               placeholder="Search..."
             />
-            <i class="fas fa-search"></i>
+            <i class="fa fa-search"></i>
           </div>
           <a href="#" class="header-logo-container">
             <img src="images/logo.png" alt="" class="header-logo__img" />
@@ -45,38 +50,32 @@
 
     <main>
       <section class="intro-songs-container swiper mySwiper">
-        <div class="intro-songs-wrapper swiper-wrapper">
-          <div class="intro-song-content swiper-slide">
-            
-            <div class="intro-song__img">
-              <img src="images/logo.png" alt="" />
-            </div>
-
-            <div class="intro-song-infos">
-              <div class="intro-song__name">Tigh Akhar</div>
-              <div class="intro-song__artist">Poobon</div>
-            </div>
-
-
-            <div class="intro-song-control">
-              <div class="intro-control__play"><i class="fa fa-play"></i></div> 
-              <div class="intro-control__like"><i class="fa fa-heart"></i></div>
-              <div class="intro-control__download"><i class="fa fa-download"></i></div>
-              <div class="intro-control__add"><i class="fa fa-plus"></i></div>
-            </div>
-
-
-            <div class="intro-song__prograss">
-              <div class="intro-current-time">1:13</div>
-              <div class="intro-prograss__fit"></div>
-              <div class="intro-duration-time">2:32</div>
-            </div>
-
-          </div>
-        </div>
+        <div class="intro-songs-wrapper swiper-wrapper"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
+      </section>
+
+      <section class="muisc-player-wrapper">
+        <div class="music-player-info">
+          <div class="player-info__img"><img src="" alt=""></div>
+          <div class="player-info__name"></div>
+          <div class="player-info__artist"></div>
+        </div>
+        <div class="music-player-icons">
+            <i class="fa fa-random"></i>
+            <i class="fa fa-backward"></i>
+            <i class="fa fa-play-circle"></i>
+            <i class="fa fa-forward"></i>
+            <i class="fa fa-repeat"></i>
+        </div>
+        <div class="music-player-controls">
+              <div class="player-control__duration"></div>
+              <div class="player-control__current"></div>
+              <div class="player-control__volume"><input type="range" max="100"></div>
+              <div class="player-control__setting"></div>
+              <div class="player-control__playlist"></div>
+        </div>
       </section>
     </main>
 
