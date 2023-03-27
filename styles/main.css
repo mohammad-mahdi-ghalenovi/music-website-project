@@ -15,6 +15,7 @@
 }
 
 body {
+  height: 2000px;
   /* background: #000; */
 }
 
@@ -234,18 +235,83 @@ body {
 
 /* musicPlayer */
 
-.muisc-player-wrapper{}
-.music-player-info{}
-.player-info__img{}
-.player-info__name{}
-.player-info__artist{}
-.music-player-icons{}
-.music-player-controls{}
-.player-control__duration{}
-.player-control__current{}
-.player-control__volume{}
-.player-control__setting{}
-.player-control__playlist{}
+.music-player-wrapper {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background: #111;
+  color: white;
+  z-index: 99;
+}
+
+.music-player-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  width: 100%;
+  height: 100%;
+}
+
+.music-player-info {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  /* background: red; */
+}
+
+.player-info__img {
+  grid-row: 1/-1;
+  grid-column: 1/2;
+}
+
+.player-info__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.player-info__name {
+  font-size: 12px;
+  align-self: end;
+  padding-left: 0.3rem;
+}
+
+.player-info__artist {
+  font-size: 10px;
+  align-self: start;
+  padding-left: 0.3rem;
+  color: gray;
+}
+
+.music-player-icons {
+  display: flex;
+}
+
+.music-player-icons i {
+  margin: 0 1rem;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.music-player-icons i:hover{
+  color: #fc3b00;
+}
+
+.music-player-controls {
+}
+.player-control__duration {
+}
+.player-control__current {
+}
+.player-control__volume {
+}
+.player-control__setting {
+}
+.player-control__playlist {
+}
 
 /* RESPONSIVE */
 @media only screen and (max-width: 1200px) {
