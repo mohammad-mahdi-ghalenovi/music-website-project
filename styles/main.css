@@ -16,7 +16,7 @@
 
 body {
   height: 2000px;
-  /* background: #000; */
+  background: #000;
 }
 
 /* HEADER  TOP */
@@ -183,56 +183,6 @@ body {
   color: #c13106;
 }
 
-.intro-song__prograss {
-  position: relative;
-  align-self: center;
-  height: 5px;
-  width: 85%;
-  bottom: 3px;
-  margin-top: 1rem;
-  background: #3e4042;
-  border-radius: 0.4rem;
-  cursor: pointer;
-}
-
-.intro-prograss__fit {
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 85%;
-  transition: 0.4s ease;
-  background: #c13106;
-}
-
-.intro-prograss__fit::after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 5px;
-  width: 5px;
-  border-radius: 50%;
-  background: #fff;
-  padding: 2px;
-}
-
-.intro-current-time {
-  position: absolute;
-  left: 0;
-  bottom: 15px;
-  color: #c13106;
-  text-shadow: 0 0 1px #fff;
-}
-
-.intro-duration-time {
-  position: absolute;
-  right: 0;
-  bottom: 15px;
-  color: #c13106;
-  text-shadow: 0 0 1px #fff;
-}
-
 /* musicPlayer */
 
 .music-player-wrapper {
@@ -241,7 +191,8 @@ body {
   bottom: 0;
   width: 100%;
   height: 4rem;
-  background: #111;
+  background: #11111191;
+  backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
   color: white;
   z-index: 99;
 }
@@ -265,11 +216,13 @@ body {
 .player-info__img {
   grid-row: 1/-1;
   grid-column: 1/2;
+  overflow: hidden;
 }
 
 .player-info__img img {
   width: 100%;
   height: 100%;
+  border-radius: 0.6rem;
 }
 
 .player-info__name {
@@ -287,21 +240,37 @@ body {
 
 .music-player-icons {
   display: flex;
+  align-self: center;
 }
 
 .music-player-icons i {
   margin: 0 1rem;
   font-size: 20px;
   cursor: pointer;
+  align-self: center;
   transition: 0.4s ease;
 }
 
-.music-player-icons i:hover{
+.music-player-icons i:hover {
   color: #fc3b00;
 }
 
 .music-player-controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.player-control-times {
+  display: flex;
+  font-size: 12px;
+  margin: 0 1rem;
+}
+
+.music-player-controls > div > i {
+  margin: 0 1rem;
+}
+
 .player-control__duration {
 }
 .player-control__current {
@@ -311,6 +280,39 @@ body {
 .player-control__setting {
 }
 .player-control__playlist {
+}
+
+.player-song__prograss {
+  position: absolute;
+  align-self: center;
+  height: 3px;
+  width: 100%;
+  top: 0;
+  background: #3e4042;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.player-prograss__fit {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 85%;
+  transition: 0.4s ease;
+  background: #c13106;
+}
+
+.player-prograss__fit::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 2px;
 }
 
 /* RESPONSIVE */
