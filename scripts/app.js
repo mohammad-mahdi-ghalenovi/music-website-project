@@ -10,3 +10,13 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// songs
+let introSongs = [
+  {
+    artist: "",
+    musicName: "",
+    path: "",
+    cover: "",
+  },
+];
