@@ -14,13 +14,16 @@
   border: 1px solid violet;
 }
 
+body {
+  background: #000;
+}
+
 /* HEADER  TOP */
 
 .top-header-container {
 }
 
 .top-header-wrapper {
-  background-color: red;
   height: 4rem;
   background-color: black;
   border-bottom: 1px solid rgb(170, 163, 163);
@@ -95,16 +98,112 @@
 
 /* INTRO SONGS */
 
-.intro-songs-container{}
-.intro-songs-wrapper{}
-.intro-song-content{}
-.intro-song__views{}
-.intro-song__name{}
-.intro-song__artist{}
-.intro-song__img{}
-.intro-song__prograss{}
+.intro-songs-container {
+}
+.intro-songs-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
+.intro-song-content {
+  display: grid;
+  position: relative;
+  grid-template-rows: repeat(2, 5rem);
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 33rem;
+  border-radius: 0.3rem;
+  background-color: #101316;
+  padding: 1.4rem;
+  margin: 2rem;
+}
 
+.intro-song-infos {
+  grid-column: 1/2;
+  display: grid;
+  align-self: center;
+  height: 6rem;
+  width: 12rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.intro-song__name {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: end;
+  font-size: 16px;
+  color: white;
+  padding-left: 0.5rem;
+}
+
+.intro-song__artist {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: start;
+  font-size: 12px;
+  color: gray;
+  padding-left: 0.5rem;
+  padding-top: 0.2rem;
+}
+
+.intro-song__img {
+  grid-row: 1/-1;
+  grid-column: 1/2;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-song__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6rem;
+}
+
+.intro-song__views {
+  grid-column: 2/3;
+  justify-self: center;
+  align-self: center;
+  color: gray;
+  font-size: 13px;
+  padding-top: 1rem;
+}
+
+.intro-song__prograss {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  padding: 0 2rem;
+  height: 5px;
+  width: 75%;
+  background: #fc3b00;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.intro-prograss__fit {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 85%;
+  transition: 0.4s ease;
+  background: #111;
+}
+
+.intro-prograss__fit::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  border: 4px solid orange;
+}
 
 /* RESPONSIVE */
 @media only screen and (max-width: 1200px) {

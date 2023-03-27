@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" />
     <link rel="stylesheet" href="styles/main.css" />
   </head>
@@ -36,19 +44,96 @@
     </header>
 
     <main>
-      <section class="intro-songs-container">
-            <div class="intro-songs-wrapper">
-                <div class="intro-song-content">
-                      <div class="intro-song__views"></div>
-                      <div class="intro-song__name"></div>
-                      <div class="intro-song__artist"></div>
-                      <div class="intro-song__img"><img src="" alt=""></div>
-                      <div class="intro-song__prograss"></div>
+      <section class="intro-songs-container swiper mySwiper">
+        <div class="container">
+          <div class="intro-songs-wrapper swiper-wrapper">
+            <div class="intro-song-content swiper-slide">
+              <div class="intro-song-infos">
+                <div class="intro-song__name">Tigh Akhar</div>
+                <div class="intro-song__artist">Poobon</div>
+                <div class="intro-song__img">
+                  <img src="images/logo.png" alt="" />
+                  <div class="intro-song-img__play">
+                    <i class="fa fa-play"></i>
+                  </div>
                 </div>
+              </div>
+              <div class="intro-song__views">1.2K</div>
+              <div class="intro-song__prograss">
+                <div class="intro-prograss__fit"></div>
+              </div>
             </div>
+            <div class="intro-song-content swiper-slide">
+              <div class="intro-song-infos">
+                <div class="intro-song__name">Tigh Akhar</div>
+                <div class="intro-song__artist">Poobon</div>
+                <div class="intro-song__img">
+                  <img src="images/logo.png" alt="" />
+                  <div class="intro-song-img__play">
+                    <i class="fa fa-play"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="intro-song__views">1.2K</div>
+              <div class="intro-song__prograss">
+                <div class="intro-prograss__fit"></div>
+              </div>
+            </div>
+            <div class="intro-song-content swiper-slide">
+              <div class="intro-song-infos">
+                <div class="intro-song__name">Tigh Akhar</div>
+                <div class="intro-song__artist">Poobon</div>
+                <div class="intro-song__img">
+                  <img src="images/logo.png" alt="" />
+                  <div class="intro-song-img__play">
+                    <i class="fa fa-play"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="intro-song__views">1.2K</div>
+              <div class="intro-song__prograss">
+                <div class="intro-prograss__fit"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="scripts/app.js"></script>
   </body>
 </html>
