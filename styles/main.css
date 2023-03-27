@@ -101,8 +101,6 @@ body {
 .intro-songs-container {
 }
 .intro-songs-wrapper {
-  display: flex;
-  justify-content: center;
 }
 
 .intro-song-content {
