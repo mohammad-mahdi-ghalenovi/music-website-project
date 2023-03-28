@@ -241,6 +241,9 @@ body {
 .music-player-icons {
   display: flex;
   align-self: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .music-player-icons i {
