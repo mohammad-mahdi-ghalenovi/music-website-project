@@ -19,6 +19,10 @@ body {
   background: #000;
 }
 
+::selection {
+  background: #fc3b00;
+}
+
 /* HEADER  TOP */
 
 .top-header-container {
@@ -405,6 +409,75 @@ body {
 .playlist-content__info {
   margin-left: 5rem;
   font-size: 28px;
+}
+
+/* TOP PLAYLISTS */
+
+.top-playlist-container {
+  margin-top: 3rem;
+}
+
+.top-playlist-wrapper {
+  position: relative;
+  left: -20px;
+}
+
+.top-playlist-Title {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0.3rem;
+  text-align: center;
+}
+
+.top-playlist-Title p:first-child {
+  color: white;
+  font-size: 18px;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.top-playlist-Title p {
+  color: gray;
+  padding: 0;
+  margin: 0;
+  margin-top: 0.1rem;
+}
+
+.top-playlist-items {
+  margin-top: 1rem;
+}
+
+.top-playlist-items-wrapper {
+  position: relative;
+}
+
+.playlist-item-content {
+  margin: 0.4rem 0.3rem;
+  background: #097d53;
+  height: 14rem;
+  width: 14rem;
+  border-radius: 0.4rem;
+}
+
+.playlist-item-content:last-child {
+  position: relative;
+  right: 4rem;
+}
+
+.top-playlist-badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.playlist-badge-content {
+  margin: 0.4rem;
+  width: 19rem;
+  height: 5rem;
+  background: #0693e3;
+  border-radius: 0.4rem;
 }
 
 /* RESPONSIVE */

@@ -11,6 +11,23 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+const swiper2 = new Swiper(".mySwiper2", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
 // header
 let bottomHeaderTitle = document.querySelector(".bottom-header__title");
 let bottomHeaderImg = document.querySelector(".header-content__img");
@@ -135,5 +152,6 @@ mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 
 window.onload = function () {
   bottomHeaderTitle.classList.add("header-title-active");
-  bottomHeaderImg.classList.add("header-img-active")
+  bottomHeaderImg.classList.add("header-img-active");
+  document.body.style.opacity = 1;
 };
