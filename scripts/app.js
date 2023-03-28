@@ -16,6 +16,7 @@ const swiper2 = new Swiper(".mySwiper2", {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
+  spaceBetween: 20,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
@@ -152,6 +153,6 @@ mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 
 window.onload = function () {
   bottomHeaderTitle.classList.add("header-title-active");
-  bottomHeaderImg.classList.add("header-img-active")
+  bottomHeaderImg.classList.add("header-img-active");
   document.body.style.opacity = 1;
 };
