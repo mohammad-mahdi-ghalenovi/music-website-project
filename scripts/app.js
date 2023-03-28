@@ -152,6 +152,6 @@ mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 
 window.onload = function () {
   bottomHeaderTitle.classList.add("header-title-active");
-  bottomHeaderImg.classList.add("header-img-active");
+  bottomHeaderImg.classList.add("header-img-active")
   document.body.style.opacity = 1;
 };
