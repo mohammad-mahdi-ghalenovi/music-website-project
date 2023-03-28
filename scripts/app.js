@@ -11,6 +11,10 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+// header
+let bottomHeaderTitle = document.querySelector(".bottom-header__title");
+let bottomHeaderImg = document.querySelector(".header-content__img");
+
 // songs
 let introSongs = [
   {
@@ -128,3 +132,8 @@ playerPlayBtn.addEventListener("click", function () {
   }
 });
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
+
+window.onload = function () {
+  bottomHeaderTitle.classList.add("header-title-active");
+  bottomHeaderImg.classList.add("header-img-active")
+};
