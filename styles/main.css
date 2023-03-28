@@ -14,13 +14,17 @@
   border: 1px solid violet;
 }
 
+body {
+  height: 2000px;
+  background: #000;
+}
+
 /* HEADER  TOP */
 
 .top-header-container {
 }
 
 .top-header-wrapper {
-  background-color: red;
   height: 4rem;
   background-color: black;
   border-bottom: 1px solid rgb(170, 163, 163);
@@ -42,7 +46,15 @@
 
 .header-search-container {
   position: relative;
+  display: flex;
   flex-basis: 50%;
+}
+
+.header-search-container i {
+  right: 25px;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
 }
 
 .header-search__input {
@@ -95,16 +107,216 @@
 
 /* INTRO SONGS */
 
-.intro-songs-container{}
-.intro-songs-wrapper{}
-.intro-song-content{}
-.intro-song__views{}
-.intro-song__name{}
-.intro-song__artist{}
-.intro-song__img{}
-.intro-song__prograss{}
+.intro-songs-container {
+  margin: 2rem 9rem;
+}
+.intro-songs-wrapper {
+}
 
+.intro-song-content {
+  display: grid;
+  position: relative;
+  grid-template-rows: 4rem 2rem 5rem;
+  grid-template-columns: 12rem 1fr;
+  max-width: 50%;
+  border-radius: 0.6rem;
+  background-color: #101316;
+}
 
+.intro-song__img {
+  grid-row: 1/-1;
+  grid-column: 1/2;
+  width: 80%;
+  height: 80%;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-song__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6rem;
+}
+
+.intro-song-infos {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  align-self: center;
+}
+
+.intro-song__name {
+  font-size: 16px;
+  color: white;
+}
+
+.intro-song__artist {
+  font-size: 12px;
+  color: gray;
+  padding-top: 0.3rem;
+}
+
+.intro-song-control {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  display: flex;
+  margin-top: 0.4rem;
+  align-items: center;
+}
+
+.intro-song-control > div {
+  margin: 0 2rem 0 0;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.intro-song-control > div > i {
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.intro-song-control > div > i:hover {
+  color: #c13106;
+}
+
+/* musicPlayer */
+
+.music-player-wrapper {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background: #11111191;
+  backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
+  color: white;
+  z-index: 99;
+}
+
+.music-player-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  width: 100%;
+  height: 100%;
+}
+
+.music-player-info {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  /* background: red; */
+}
+
+.player-info__img {
+  grid-row: 1/-1;
+  grid-column: 1/2;
+  overflow: hidden;
+}
+
+.player-info__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6rem;
+}
+
+.player-info__name {
+  font-size: 12px;
+  align-self: end;
+  padding-left: 0.3rem;
+}
+
+.player-info__artist {
+  font-size: 10px;
+  align-self: start;
+  padding-left: 0.3rem;
+  color: gray;
+}
+
+.music-player-icons {
+  display: flex;
+  align-self: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.music-player-icons i {
+  margin: 0 1rem;
+  font-size: 20px;
+  cursor: pointer;
+  align-self: center;
+  transition: 0.4s ease;
+}
+
+.music-player-icons i:hover {
+  color: #fc3b00;
+}
+
+.music-player-controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.player-control-times {
+  display: flex;
+  font-size: 12px;
+  margin: 0 1rem;
+}
+
+.music-player-controls > div > i {
+  margin: 0 1rem;
+}
+
+.player-control__duration {
+}
+.player-control__current {
+}
+.player-control__volume {
+}
+.player-control__setting {
+}
+.player-control__playlist {
+}
+
+.player-song__prograss {
+  position: absolute;
+  align-self: center;
+  height: 3px;
+  width: 100%;
+  top: 0;
+  background: #3e4042;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.player-prograss__fit {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 0;
+  transition: 0.4s ease;
+  background: #c13106;
+}
+
+.player-prograss__fit::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 2px;
+}
 
 /* RESPONSIVE */
 @media only screen and (max-width: 1200px) {
