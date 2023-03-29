@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles/animate.css" />
     <link rel="stylesheet" href="styles/main.css" />
   </head>
-  <body style="opacity: 0;transition: 0.4s ease;">
+  <body style="opacity: 0; transition: 0.4s ease">
     <audio
       class="main-audio"
       style="position: absolute; height: 0; width: 0; z-index: -9"
@@ -39,11 +39,16 @@
             />
             <i class="fa fa-search"></i>
           </div>
-          <a href="#" class="header-logo-container">
-            <img src="images/logo.png" alt="" class="header-logo__img" />
+          <a href="https://github.com/Mettiuy" class="header-logo-container">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVySSsjLfROoU2fj7dNFn2DtEBwjd8IbUSJsB5jFI&s"
+              alt=""
+              class="header-logo__img"
+            />
           </a>
         </div>
       </section>
+
       <section class="bottom-header-container">
         <div class="bottom-header-wrapper">
           <div class="header-content-slider">
@@ -115,8 +120,15 @@
       <section class="top-songs-container">
         <div class="container">
           <div class="top-content-buttons">
-            <a href="#" class="top-content__btn wow animate__animated animate__fadeInDown">Podcast Muiscs</a
-            ><a href="#" class="top-content__btn wow animate__animated animate__fadeInUp">Buy Premium</a>
+            <a
+              href="#"
+              class="top-content__btn wow animate__animated animate__fadeInDown"
+              >Podcast Muiscs</a
+            ><a
+              href="#"
+              class="top-content__btn wow animate__animated animate__fadeInUp"
+              >Buy Premium</a
+            >
           </div>
           <div class="top-content-playlists">
             <div class="top-content__playlist">
@@ -185,46 +197,29 @@
 
       <section class="new-released-songs-container">
         <div class="container">
-          <div class="new-released-wrapper">
-            <div class="release-content">
-                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
-                  <div class="release-content__info">
-                          <div class="release-name">Baby Bad</div>
-                          <div class="release-artist">021 - kid</div>
-                  </div>
-            </div>
-            <div class="release-content">
-                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
-                  <div class="release-content__info">
-                          <div class="release-name">Baby Bad</div>
-                          <div class="release-artist">021 - kid</div>
-                  </div>
-            </div>
-            <div class="release-content">
-                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
-                  <div class="release-content__info">
-                          <div class="release-name">Baby Bad</div>
-                          <div class="release-artist">021 - kid</div>
-                  </div>
-            </div>
-            <div class="release-content">
-                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
-                  <div class="release-content__info">
-                          <div class="release-name">Baby Bad</div>
-                          <div class="release-artist">021 - kid</div>
-                  </div>
-            </div>
-            <div class="release-content">
-                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
-                  <div class="release-content__info">
-                          <div class="release-name">Baby Bad</div>
-                          <div class="release-artist">021 - kid</div>
-                  </div>
-            </div>
-          </div>
+          <div class="new-released-wrapper"></div>
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="container">
+          <div class="footer-wrapper">
+            <a href="https://github.com/Mettiuy" class="footer-logo-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVySSsjLfROoU2fj7dNFn2DtEBwjd8IbUSJsB5jFI&s"
+                alt=""
+                class="footer-logo__img"
+              />
+            </a>
+            <div class="footer-copy">
+              &copy; allRights reserved By MettiPedia
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="scripts/wow.min.js"></script>
@@ -232,5 +227,6 @@
       new WOW().init();
     </script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/createElems.js"></script>
   </body>
 </html>
