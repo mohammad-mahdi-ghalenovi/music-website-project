@@ -15,12 +15,13 @@
 }
 
 body {
-  height: 2000px;
+  height: 3000px;
   background: #000;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: #fc3b00;
+  background: #111;
 }
 
 /* HEADER  TOP */
@@ -100,31 +101,27 @@ body {
 
 .header-content-slider {
   position: relative;
+  display: flex;
+  justify-content: center;
   flex-basis: 100%;
   height: 100%;
 }
 
 .header-content__img {
+  position: absolute;
   width: 100%;
   height: 100%;
   transition: 1.4s ease;
 }
 
 .bottom-header__title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) translateY(20px);
+  align-self: center;
+  justify-self: center;
   color: white;
   text-shadow: 0 0 2px BLACK;
   transition: 1.4s ease;
   letter-spacing: 2px;
   opacity: 0;
-}
-
-.header-title-active {
-  transform: translate(-50%, -50%) translateY(0px);
-  opacity: 1;
 }
 
 .header-img-active {
@@ -407,7 +404,8 @@ body {
 }
 
 .playlist-content__info {
-  margin-left: 5rem;
+  position: relative;
+  right: -45px;
   font-size: 28px;
 }
 
@@ -458,6 +456,16 @@ body {
   height: 14rem;
   width: 14rem;
   border-radius: 0.4rem;
+  filter: grayscale(70%) blur(5px);
+}
+
+.swiper-slide-active {
+  filter: grayscale(0) blur(0);
+}
+
+.playlist-item-content img {
+  width: 100%;
+  height: 100%;
 }
 
 .playlist-item-content:last-child {
@@ -468,15 +476,66 @@ body {
 .top-playlist-badges {
   display: flex;
   flex-wrap: wrap;
+  justify-content: start;
   margin-top: 2rem;
 }
 
 .playlist-badge-content {
-  margin: 0.15rem;
+  margin: 0.25rem;
   width: 16rem;
   height: 4rem;
   background: #0693e3;
   border-radius: 0.4rem;
+}
+
+/* NEW RELEASE */
+
+.new-released-songs-container {
+  margin-top: 8rem;
+}
+
+.new-released-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.release-content {
+  margin: 0.6rem;
+  width: 203px;
+  height: 326px;
+  background-color: #101316;
+  display: flex;
+  border-radius: 0.4rem;
+  flex-direction: column;
+}
+
+.release-content__img {
+  min-height: 13rem;
+}
+
+.release-content__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.release-content__info {
+  align-self: center;
+  padding-top: 2rem;
+}
+
+.release-name {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.release-artist {
+  color: white;
+  font-size: 11px;
+  text-align: center;
+  padding-top: 0.3rem;
 }
 
 /* RESPONSIVE */

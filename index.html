@@ -14,9 +14,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="styles/animate.css" />
     <link rel="stylesheet" href="styles/main.css" />
   </head>
-  <body style="opacity: 0;">
+  <body style="opacity: 0;transition: 0.4s ease;">
     <audio
       class="main-audio"
       style="position: absolute; height: 0; width: 0; z-index: -9"
@@ -44,10 +49,14 @@
           <div class="header-content-slider">
             <img
               class="header-content__img"
-              src="images/wallpaperflare.com_wallpaper_9.jg"
+              src="images/wallpaperflare.com_wallpaper_9.jpg"
               alt=""
             />
-            <h1 class="bottom-header__title">Welcome To MettiPedia</h1>
+            <h1
+              class="bottom-header__title wow animate__animated animate__fadeInUp"
+            >
+              Welcome To MettiPedia
+            </h1>
           </div>
         </div>
       </section>
@@ -105,62 +114,123 @@
 
       <section class="top-songs-container">
         <div class="container">
-              <div class="top-content-buttons">
-                      <a href="#" class="top-content__btn">Podcast Muiscs</a><a href="#" class="top-content__btn">Buy Premium</a>
-              </div>
-              <div class="top-content-playlists">
-                     <div class="top-content__playlist">
-                          <div class="playlist-content__img"><img src="images/logo.png" alt="" /></div>
-                          <div class="playlist-content__name">The best and most viewed songs in month</div>
-                          <div class="playlist-content__info"><i class="fa fa-play-circle"></i></div>
-                    </div>
-                    <div class="top-content__playlist">
-                      <div class="playlist-content__img"><img src="images/logo.png" alt="" /></div>
-                      <div class="playlist-content__name">The best and most viewed songs in month</div>
-                      <div class="playlist-content__info"><i class="fa fa-play-circle"></i></div>
-                </div>
-              </div>
+          <div class="top-content-buttons">
+            <a href="#" class="top-content__btn wow animate__animated animate__fadeInDown">Podcast Muiscs</a
+            ><a href="#" class="top-content__btn wow animate__animated animate__fadeInUp">Buy Premium</a>
           </div>
+          <div class="top-content-playlists">
+            <div class="top-content__playlist">
+              <div class="playlist-content__img">
+                <img src="images/logo.png" alt="" />
+              </div>
+              <div class="playlist-content__name">
+                The best and most viewed songs in month
+              </div>
+              <div class="playlist-content__info">
+                <i class="fa fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="top-content__playlist">
+              <div class="playlist-content__img">
+                <img src="images/logo.png" alt="" />
+              </div>
+              <div class="playlist-content__name">
+                The best and most viewed songs in month
+              </div>
+              <div class="playlist-content__info">
+                <i class="fa fa-play-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="top-playlist-container">
-          <div class="container" >
-                <div class="top-playlist-wrapper">
-                      <div class="top-playlist-Title">
-                            <p>Play list</p>
-                            <p>Monthly Update</p>
-                      </div>
-                      <div class="top-playlist-items  swiper mySwiper2">
-                            <div class="top-playlist-items-wrapper swiper-wrapper">
-                                  <div class="playlist-item-content swiper-slide"></div>
-                                  <div class="playlist-item-content swiper-slide"></div>
-                                  <div class="playlist-item-content swiper-slide"></div>
-                                  <div class="playlist-item-content swiper-slide"></div>
-                                  <div class="playlist-item-content swiper-slide"></div>
-                            </div>
-                      </div>
-                      <div class="top-playlist-badges">
-                            <div class="playlist-badge-content"></div>
-                            <div class="playlist-badge-content"></div>
-                            <div class="playlist-badge-content"></div>
-                            <div class="playlist-badge-content"></div>
-                            <div class="playlist-badge-content"></div>
-                            <div class="playlist-badge-content"></div>
-                      </div>
+        <div class="container">
+          <div class="top-playlist-wrapper">
+            <div class="top-playlist-Title">
+              <p>Play list</p>
+              <p>Monthly Update</p>
+            </div>
+            <div class="top-playlist-items swiper mySwiper2">
+              <div class="top-playlist-items-wrapper swiper-wrapper">
+                <div class="playlist-item-content swiper-slide">
+                  <img src="images/logo.pn" alt="" />
                 </div>
+                <div class="playlist-item-content swiper-slide">
+                  <img src="images/logo.pn" alt="" />
+                </div>
+                <div class="playlist-item-content swiper-slide">
+                  <img src="images/logo.pn" alt="" />
+                </div>
+                <div class="playlist-item-content swiper-slide">
+                  <img src="images/logo.pn" alt="" />
+                </div>
+                <div class="playlist-item-content swiper-slide">
+                  <img src="images/logo.pn" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="top-playlist-badges">
+              <div class="playlist-badge-content"></div>
+              <div class="playlist-badge-content"></div>
+              <div class="playlist-badge-content"></div>
+              <div class="playlist-badge-content"></div>
+              <div class="playlist-badge-content"></div>
+              <div class="playlist-badge-content"></div>
+            </div>
           </div>
+        </div>
       </section>
 
       <section class="new-released-songs-container">
-          <div class="container">
-            <div class="new-released-wrapper">  
-                  
+        <div class="container">
+          <div class="new-released-wrapper">
+            <div class="release-content">
+                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
+                  <div class="release-content__info">
+                          <div class="release-name">Baby Bad</div>
+                          <div class="release-artist">021 - kid</div>
+                  </div>
+            </div>
+            <div class="release-content">
+                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
+                  <div class="release-content__info">
+                          <div class="release-name">Baby Bad</div>
+                          <div class="release-artist">021 - kid</div>
+                  </div>
+            </div>
+            <div class="release-content">
+                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
+                  <div class="release-content__info">
+                          <div class="release-name">Baby Bad</div>
+                          <div class="release-artist">021 - kid</div>
+                  </div>
+            </div>
+            <div class="release-content">
+                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
+                  <div class="release-content__info">
+                          <div class="release-name">Baby Bad</div>
+                          <div class="release-artist">021 - kid</div>
+                  </div>
+            </div>
+            <div class="release-content">
+                  <div class="release-content__img"><img src="images/logo.png" alt=""></div>
+                  <div class="release-content__info">
+                          <div class="release-name">Baby Bad</div>
+                          <div class="release-artist">021 - kid</div>
+                  </div>
             </div>
           </div>
+        </div>
       </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="scripts/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script src="scripts/app.js"></script>
   </body>
 </html>
