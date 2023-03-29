@@ -15,13 +15,13 @@
 }
 
 body {
-  height: 2000px;
+  height: 3000px;
   background: #000;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #fc3b00;
+  background: #111;
 }
 
 /* HEADER  TOP */
@@ -476,16 +476,66 @@ body {
 .top-playlist-badges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   margin-top: 2rem;
 }
 
 .playlist-badge-content {
-  margin: 0.15rem;
+  margin: 0.25rem;
   width: 16rem;
   height: 4rem;
   background: #0693e3;
   border-radius: 0.4rem;
+}
+
+/* NEW RELEASE */
+
+.new-released-songs-container {
+  margin-top: 8rem;
+}
+
+.new-released-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.release-content {
+  margin: 0.6rem;
+  width: 203px;
+  height: 326px;
+  background-color: #101316;
+  display: flex;
+  border-radius: 0.4rem;
+  flex-direction: column;
+}
+
+.release-content__img {
+  min-height: 13rem;
+}
+
+.release-content__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.release-content__info {
+  align-self: center;
+  padding-top: 2rem;
+}
+
+.release-name {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.release-artist {
+  color: white;
+  font-size: 11px;
+  text-align: center;
+  padding-top: 0.3rem;
 }
 
 /* RESPONSIVE */
