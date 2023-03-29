@@ -95,7 +95,7 @@ introSongs.forEach(function (music) {
 function createIntroMuics(music) {
   introSongsWrapper.insertAdjacentHTML(
     "beforeend",
-    '<div class="intro-song-content swiper-slide"> <div class="intro-song__img">    <img src="' +
+    '<div class="intro-song-content swiper-slide "> <div class="intro-song__img">    <img src="' +
       music.cover +
       '" alt="" />  </div>  <div class="intro-song-infos">    <div class="intro-song__name">' +
       music.musicName +
@@ -131,6 +131,10 @@ function pauseMusic() {
 let musicDuration;
 let musicCurrent;
 let prograssBarPercent;
+let currentMin;
+let currentSeconde;
+let durationMin;
+let durationSeconde;
 function updatePorgrassBar(e) {
   musicDuration = e.srcElement.duration;
   musicCurrent = e.srcElement.currentTime;
@@ -138,8 +142,21 @@ function updatePorgrassBar(e) {
   prograssBarPercent = (musicCurrent / musicDuration) * 100;
   playerPrograssBar.style.width = prograssBarPercent + "%";
   // duration and current time set
-  // musicDuration = Math.floor(musicDuration / 60);
-  // musicCurrent = Math.floor(musicCurrent / 60);
+  currentMin = Math.floor(musicCurrent / 60);
+  durationMin = Math.floor(musicDuration / 60);
+  durationSeconde = Math.floor(musicDuration % 60);
+  currentSeconde = Math.floor(musicCurrent % 60);
+
+  playerControlDuration.textContent = durationMin + " : " + durationSeconde;
+  playerControlCurrent.textContent = currentMin + " : " + currentSeconde;
+
+  if (durationSeconde < 10) {
+    playerControlDuration.textContent =
+      durationMin + " : " + 0 + durationSeconde;
+  }
+  if (currentSeconde < 10) {
+    playerControlCurrent.textContent = currentMin + " : " + 0 + currentSeconde;
+  }
 }
 
 playerPlayBtn.addEventListener("click", function () {
@@ -152,7 +169,6 @@ playerPlayBtn.addEventListener("click", function () {
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 
 window.onload = function () {
-  bottomHeaderTitle.classList.add("header-title-active");
   bottomHeaderImg.classList.add("header-img-active");
   document.body.style.opacity = 1;
 };
