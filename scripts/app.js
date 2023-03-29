@@ -153,6 +153,8 @@ let playerPrograssBar = document.querySelector(".player-prograss__fit");
 let isPlaying = false;
 // release songs
 const releaseContentContainer = document.querySelector(".new-released-wrapper");
+// searchBar
+const headerSearchInput = document.querySelector(".header-search__input");
 
 function loadMusic(muiscID) {
   muiscID = muiscID - 1;
@@ -219,3 +221,16 @@ window.onload = function () {
   bottomHeaderImg.classList.add("header-img-active");
   document.body.style.opacity = 1;
 };
+
+// search handled
+let relatedSongs;
+function findRelatedSongs() {
+  relatedSongs = songs.filter(function (music) {
+    return music.musicName
+      .toLowerCase()
+      .includes(headerSearchInput.value.toLowerCase());
+  });
+  console.log(relatedSongs);
+}
+
+headerSearchInput.addEventListener("input", findRelatedSongs);
