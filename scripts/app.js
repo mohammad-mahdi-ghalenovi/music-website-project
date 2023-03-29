@@ -34,7 +34,7 @@ let bottomHeaderTitle = document.querySelector(".bottom-header__title");
 let bottomHeaderImg = document.querySelector(".header-content__img");
 
 // songs
-let introSongs = [
+let songs = [
   {
     id: 1,
     artist: "Poobon",
@@ -63,6 +63,76 @@ let introSongs = [
     path: ".mp3",
     cover: ".png",
   },
+  {
+    id: 5,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 6,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 7,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 8,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 9,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 10,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 11,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 12,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 13,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
+  {
+    id: 14,
+    artist: "Billie Illish",
+    musicName: "No Time To Die",
+    path: ".mp3",
+    cover: ".png",
+  },
 ];
 
 const introSongsWrapper = document.querySelector(".intro-songs-wrapper");
@@ -81,38 +151,15 @@ const playerControlVolume = document.querySelector(
 );
 let playerPrograssBar = document.querySelector(".player-prograss__fit");
 let isPlaying = false;
-let i = 0;
-
-introSongs.forEach(function (music) {
-  i++;
-  if (i < 5) {
-    createIntroMuics(music);
-  } else {
-    console.log(i);
-  }
-});
-
-function createIntroMuics(music) {
-  introSongsWrapper.insertAdjacentHTML(
-    "beforeend",
-    '<div class="intro-song-content swiper-slide "> <div class="intro-song__img">    <img src="' +
-      music.cover +
-      '" alt="" />  </div>  <div class="intro-song-infos">    <div class="intro-song__name">' +
-      music.musicName +
-      '</div>    <div class="intro-song__artist">' +
-      music.artist +
-      '</div>  </div>  <div class="intro-song-control">    <div class="intro-control__play"><i class="fa fa-play" onclick="loadMusic(' +
-      music.id +
-      ')"></i></div>     <div class="intro-control__like"><i class="fa fa-heart"></i></div>    <div class="intro-control__download"><i class="fa fa-download"></i></div>    <div class="intro-control__add"><i class="fa fa-plus"></i></div>  </div>  </div>'
-  );
-}
+// release songs
+const releaseContentContainer = document.querySelector(".new-released-wrapper");
 
 function loadMusic(muiscID) {
   muiscID = muiscID - 1;
-  playerInfoName.textContent = introSongs[muiscID].musicName;
-  playerInfoArtist.textContent = introSongs[muiscID].artist;
-  playerInfoImg.setAttribute("src", introSongs[muiscID].cover);
-  mainAudio.setAttribute("src", introSongs[muiscID].path);
+  playerInfoName.textContent = songs[muiscID].musicName;
+  playerInfoArtist.textContent = songs[muiscID].artist;
+  playerInfoImg.setAttribute("src", songs[muiscID].cover);
+  mainAudio.setAttribute("src", songs[muiscID].path);
   playMusic();
 }
 
