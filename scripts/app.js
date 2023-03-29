@@ -155,6 +155,7 @@ let isPlaying = false;
 const releaseContentContainer = document.querySelector(".new-released-wrapper");
 // searchBar
 const headerSearchInput = document.querySelector(".header-search__input");
+const searchedSongsContainer = document.querySelector(".searched-songs");
 
 function loadMusic(muiscID) {
   muiscID = muiscID - 1;
@@ -217,10 +218,19 @@ playerPlayBtn.addEventListener("click", function () {
 });
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 
+// window events
 window.onload = function () {
   bottomHeaderImg.classList.add("header-img-active");
   document.body.style.opacity = 1;
 };
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 0) {
+    searchedSongsContainer.style.top = 0;
+  } else {
+    searchedSongsContainer.style.top = "4rem";
+  }
+});
 
 // search handled
 let relatedSongs;
@@ -230,7 +240,16 @@ function findRelatedSongs() {
       .toLowerCase()
       .includes(headerSearchInput.value.toLowerCase());
   });
-  console.log(relatedSongs);
+}
+
+function openRelatedSongs() {
+  searchedSongsContainer.classList.add("related-songs-active");
+}
+
+function closeRelatedSongs() {
+  searchedSongsContainer.classList.remove("related-songs-active");
 }
 
 headerSearchInput.addEventListener("input", findRelatedSongs);
+headerSearchInput.addEventListener("focus", openRelatedSongs);
+headerSearchInput.addEventListener("blur", closeRelatedSongs);

@@ -575,6 +575,23 @@ body {
   grid-column: 2/3;
 }
 
+/* SEARCHED SONGS */
+
+.searched-songs {
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  height: 30rem;
+  z-index: 9;
+  background: #111111a8;
+  transition: 0.4s ease;
+  opacity: 0;
+}
+
+.related-songs-active {
+  opacity: 1;
+}
+
 /* RESPONSIVE */
 @media only screen and (max-width: 1200px) {
   .container {
