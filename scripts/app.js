@@ -37,101 +37,101 @@ let bottomHeaderImg = document.querySelector(".header-content__img");
 let songs = [
   {
     id: 1,
-    artist: "Poobon",
-    musicName: "Tigh",
-    path: "musics/Jason_Derulo_Savage_Love_320.mp3",
-    cover: ".png",
+    artist: "Billie Eilish ",
+    musicName: "No time to Die",
+    path: " https://files.musicfeed.ir/2020/02/Billie-Eilish-No-Time-To-Die-musicfeed.ir_.mp3?128kb",
+    cover: "images/1.jpg",
   },
   {
     id: 2,
-    artist: "021 - KID",
-    musicName: "Baby Bad",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Billie Eilish ",
+    musicName: "Everything i Wanted",
+    path: " https://files.musicfeed.ir/2019/11/Billie-Eilish-everything-i-wanted-128.mp3",
+    cover: "images/2.jpg",
   },
   {
     id: 3,
-    artist: "Koroush",
-    musicName: "Shahkare",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Billie Eilish ",
+    musicName: "Happier Than ever",
+    path: " https://files.musicfeed.ir/dir/2021/7/Billie%20Eilish%20-%20Happier%20Than%20Ever/Billie%20Eilish%20Happier%20Than%20Ever.mp3",
+    cover: "images/3.jpg",
   },
   {
     id: 4,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Billie Eilish ",
+    musicName: "Listen Before i go",
+    path: " http://bayanbox.ir/download/9131075167424378680/Billie-Eilish-listen-before-i-go.mp3",
+    cover: "images/4.jpg",
   },
   {
     id: 5,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Billie Eilish",
+    musicName: "Bad Guy",
+    path: " https://mupo.ir/StaticFiles/Songs/432Hz/903833488119278054.mp3",
+    cover: "images/5.jpg",
   },
   {
     id: 6,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Olivia Rodrigo",
+    musicName: "Drivers License",
+    path: " https://files.musicfeed.ir/dir/2021/5/Olivia%20Rodrigo%20drivers%20license-128.mp3",
+    cover: "images/6.jpg",
   },
   {
     id: 7,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Parsalip",
+    musicName: "Adam Barfi",
+    path: " https://dl.melonmusic.ir/1401/Parsalip%20-%20Adam%20Barfi%20[128].mp3",
+    cover: "images/7.jpg",
   },
   {
     id: 8,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: ".png",
+    artist: "021 - Kid",
+    musicName: "Baby Bad",
+    path: " https://s2.uupload.ir/filelink/Ab5S7weAyfUW_c301010e4c/baby_bad_iub5.mp3",
+    cover: "images/8.jpg",
   },
   {
     id: 9,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Poobon",
+    musicName: "Bimarefat",
+    path: " https://dl.my-ahangha.ir/up/2019/Poobon%20Ft%20Behzad%20Leito%20-%20Bi%20Marefat%20128.mp3",
+    cover: "images/9.jpg",
   },
   {
     id: 10,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: ".png",
+    artist: "Koorosh",
+    musicName: "Shahkare",
+    path: " http://xxx.atlas-music.ir/archive/K/Koorosh/1399/Koorosh%20Ft%20Sami%20Low%20-%20Shahkar%20128.mp3",
+    cover: "images/10.jpg",
   },
   {
     id: 11,
     artist: "Billie Illish",
     musicName: "No Time To Die",
     path: ".mp3",
-    cover: ".png",
+    cover: "images/11.jpg",
   },
   {
     id: 12,
     artist: "Billie Illish",
     musicName: "No Time To Die",
     path: ".mp3",
-    cover: ".png",
+    cover: "images/12.jpg",
   },
   {
     id: 13,
     artist: "Billie Illish",
     musicName: "No Time To Die",
     path: ".mp3",
-    cover: ".png",
+    cover: "images/13.jpg",
   },
   {
     id: 14,
     artist: "Billie Illish",
     musicName: "No Time To Die",
     path: ".mp3",
-    cover: ".png",
+    cover: "images/14.jpg",
   },
 ];
 
@@ -153,6 +153,9 @@ let playerPrograssBar = document.querySelector(".player-prograss__fit");
 let isPlaying = false;
 // release songs
 const releaseContentContainer = document.querySelector(".new-released-wrapper");
+// searchBar
+const headerSearchInput = document.querySelector(".header-search__input");
+const searchedSongsContainer = document.querySelector(".searched-songs");
 
 function loadMusic(muiscID) {
   muiscID = muiscID - 1;
@@ -215,7 +218,38 @@ playerPlayBtn.addEventListener("click", function () {
 });
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 
+// window events
 window.onload = function () {
   bottomHeaderImg.classList.add("header-img-active");
   document.body.style.opacity = 1;
 };
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 0) {
+    searchedSongsContainer.style.top = 0;
+  } else {
+    searchedSongsContainer.style.top = "4rem";
+  }
+});
+
+// search handled
+let relatedSongs;
+function findRelatedSongs() {
+  relatedSongs = songs.filter(function (music) {
+    return music.musicName
+      .toLowerCase()
+      .includes(headerSearchInput.value.toLowerCase());
+  });
+}
+
+function openRelatedSongs() {
+  searchedSongsContainer.classList.add("related-songs-active");
+}
+
+function closeRelatedSongs() {
+  searchedSongsContainer.classList.remove("related-songs-active");
+}
+
+headerSearchInput.addEventListener("input", findRelatedSongs);
+headerSearchInput.addEventListener("focus", openRelatedSongs);
+headerSearchInput.addEventListener("blur", closeRelatedSongs);
