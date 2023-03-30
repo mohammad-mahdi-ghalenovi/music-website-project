@@ -418,7 +418,6 @@ body {
 
 .top-playlist-wrapper {
   position: relative;
-  left: -20px;
 }
 
 .top-playlist-Title {
@@ -657,9 +656,14 @@ body {
   .container {
     max-width: 960px;
   }
+
   .intro-songs-container {
     padding: 0;
     margin: 6rem 1.2rem;
+  }
+
+  .top-playlist-badges{
+    justify-content: center;
   }
 }
 
