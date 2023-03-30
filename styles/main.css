@@ -174,6 +174,7 @@ body {
 .intro-song__name {
   font-size: 16px;
   color: white;
+  padding-right: 0.3rem;
 }
 
 .intro-song__artist {
@@ -655,11 +656,30 @@ body {
   .container {
     max-width: 960px;
   }
+  .intro-songs-container {
+    padding: 0;
+    margin: 6rem 1.2rem;
+  }
 }
 
 @media only screen and (max-width: 992px) {
   .container {
     max-width: 720px;
+  }
+  .intro-song-control {
+    flex-wrap: wrap;
+  }
+
+  .intro-song-control div {
+    margin: 0.8rem;
+  }
+
+  .swiper-button-next {
+    display: none;
+  }
+
+  .swiper-button-prev {
+    display: none;
   }
 }
 
@@ -669,11 +689,44 @@ body {
   }
 }
 
+/* 675 */
+@media screen and (max-width: 675px) {
+  .intro-song-content {
+    max-width: 100%;
+  }
+
+    .intro-song-content {
+    grid-template-rows: 12rem 2rem 5rem;
+    grid-template-columns: 12rem;
+    justify-content: center;
+  }
+
+  .intro-song__img {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+
+  .intro-song-infos {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .intro-song-control {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .container {
     max-width: 100%;
   }
 }
+
+
 
 /* additional media query`s */
 

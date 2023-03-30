@@ -1,4 +1,4 @@
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   spaceBetween: 20,
   pagination: {
@@ -11,7 +11,7 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-const swiper2 = new Swiper(".mySwiper2", {
+let swiper2 = new Swiper(".mySwiper2", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -27,6 +27,24 @@ const swiper2 = new Swiper(".mySwiper2", {
   pagination: {
     el: ".swiper-pagination",
   },
+});
+
+// 460
+window.addEventListener("resize", function () {
+  if (window.innerWidth < 460) {
+    swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
 });
 
 // header
@@ -156,7 +174,7 @@ const releaseContentContainer = document.querySelector(".new-released-wrapper");
 // searchBar
 const headerSearchInput = document.querySelector(".header-search__input");
 const searchedSongsContainer = document.querySelector(".searched-songs");
-const searchedSongsWrapper = document.querySelector(".searched-songs-wrapper")
+const searchedSongsWrapper = document.querySelector(".searched-songs-wrapper");
 
 function loadMusic(muiscID) {
   muiscID = muiscID - 1;
@@ -242,7 +260,7 @@ function findRelatedSongs() {
       .includes(headerSearchInput.value.toLowerCase());
   });
 
-  createSearchedSongs(relatedSongs)
+  createSearchedSongs(relatedSongs);
 }
 
 function openRelatedSongs() {
