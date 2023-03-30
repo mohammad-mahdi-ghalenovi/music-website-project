@@ -39,3 +39,15 @@ function createReleaseMusics(music) {
       "</div></div></div> "
   );
 }
+
+// searched songs
+function createSearchedSongs(relatedSongs) {
+  searchedSongsWrapper.innerHTML = "";
+
+  relatedSongs.forEach(function (music) {
+    searchedSongsWrapper.insertAdjacentHTML(
+      "beforeend",
+      '<div class="searched-content">    <div class="searched__img">         <img src="'+ music.cover +'" alt="">   </div>   <div class="searched-info">         <div class="searched__musicname">'+ music.musicName +'</div>         <div class="searched__artist">'+ music.artist +'</div>   </div></div> '
+    );
+  });
+}

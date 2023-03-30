@@ -156,6 +156,7 @@ const releaseContentContainer = document.querySelector(".new-released-wrapper");
 // searchBar
 const headerSearchInput = document.querySelector(".header-search__input");
 const searchedSongsContainer = document.querySelector(".searched-songs");
+const searchedSongsWrapper = document.querySelector(".searched-songs-wrapper")
 
 function loadMusic(muiscID) {
   muiscID = muiscID - 1;
@@ -240,6 +241,8 @@ function findRelatedSongs() {
       .toLowerCase()
       .includes(headerSearchInput.value.toLowerCase());
   });
+
+  createSearchedSongs(relatedSongs)
 }
 
 function openRelatedSongs() {
