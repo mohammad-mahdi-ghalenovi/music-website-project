@@ -231,21 +231,7 @@ function updatePorgrassBar(e) {
   }
 }
 
-// window events
-window.onload = function () {
-  bottomHeaderImg.classList.add("header-img-active");
-  document.body.style.opacity = 1;
-};
-
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 0) {
-    searchedSongsContainer.style.top = 0;
-  } else {
-    searchedSongsContainer.style.top = "4rem";
-  }
-});
-
-// search handled
+// find searched songs
 let relatedSongs;
 function findRelatedSongs() {
   relatedSongs = songs.filter(function (music) {
@@ -264,6 +250,20 @@ function openRelatedSongs() {
 function closeRelatedSongs() {
   searchedSongsContainer.classList.remove("related-songs-active");
 }
+
+// window events
+window.onload = function () {
+  bottomHeaderImg.classList.add("header-img-active");
+  document.body.style.opacity = 1;
+};
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 0) {
+    searchedSongsContainer.style.top = 0;
+  } else {
+    searchedSongsContainer.style.top = "4rem";
+  }
+});
 
 playerPlayBtn.addEventListener("click", function () {
   if (isPlaying) {
