@@ -33,7 +33,7 @@ let swiper2 = new Swiper(".mySwiper2", {
 window.addEventListener("resize", function () {
   if (window.innerWidth < 460) {
     swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
+      slidesPerView: "auto",
       spaceBetween: 20,
       pagination: {
         el: ".swiper-pagination",
@@ -171,6 +171,9 @@ let playerPrograssBar = document.querySelector(".player-prograss__fit");
 let isPlaying = false;
 // release songs
 const releaseContentContainer = document.querySelector(".new-released-wrapper");
+const releaseContentImg = document.querySelectorAll(
+  ".release-content__img img"
+);
 // searchBar
 const headerSearchInput = document.querySelector(".header-search__input");
 const searchedSongsContainer = document.querySelector(".searched-songs");
@@ -270,6 +273,10 @@ function openRelatedSongs() {
 function closeRelatedSongs() {
   searchedSongsContainer.classList.remove("related-songs-active");
 }
+
+// release hovers
+
+console.log(releaseContentImg);
 
 headerSearchInput.addEventListener("input", findRelatedSongs);
 headerSearchInput.addEventListener("focus", openRelatedSongs);
