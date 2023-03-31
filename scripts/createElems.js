@@ -71,13 +71,11 @@ function iconHovers() {
       targetIcon = event.target.nextElementSibling;
 
       targetIcon.classList.add("release-icon-active");
-
       event.target.classList.add("release-img-active");
     });
 
     song.addEventListener("mouseout", function (event) {
       targetIcon.classList.remove("release-icon-active");
-
       event.target.classList.remove("release-img-active");
     });
   });
