@@ -551,10 +551,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #fc3b00;
   font-size: 41px;
   opacity: 0;
   transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.release-play:hover {
+  opacity: 1;
 }
 
 .release-icon-active {

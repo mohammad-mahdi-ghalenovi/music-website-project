@@ -32,7 +32,9 @@ function createReleaseMusics(music) {
     "beforeend",
     '<div class="release-content">  <div class="release-content__img">    <img src="' +
       music.cover +
-      '" />    <i class="fa fa-play-circle release-play"></i>  </div>  <div class="release-content__info">    <div class="release-name">' +
+      '" />    <i class="fa fa-play-circle release-play" onclick="loadMusic(' +
+      music.id +
+      ')"></i>  </div>  <div class="release-content__info">    <div class="release-name">' +
       music.musicName +
       '</div>    <div class="release-artist">' +
       music.artist +
@@ -56,5 +58,27 @@ function createSearchedSongs(relatedSongs) {
         music.artist +
         "</div>   </div></div> "
     );
+  });
+}
+
+// release hovers
+function iconHovers() {
+  releaseContentImg = document.querySelectorAll(".release-content__img img");
+  let targetIcon;
+
+  releaseContentImg.forEach(function (song) {
+    song.addEventListener("mouseover", function (event) {
+      targetIcon = event.target.nextElementSibling;
+
+      targetIcon.classList.add("release-icon-active");
+
+      event.target.classList.add("release-img-active");
+    });
+
+    song.addEventListener("mouseout", function (event) {
+      targetIcon.classList.remove("release-icon-active");
+
+      event.target.classList.remove("release-img-active");
+    });
   });
 }
