@@ -164,9 +164,8 @@ const playerControlDuration = document.querySelector(
   ".player-control__duration"
 );
 const playerControlCurrent = document.querySelector(".player-control__current");
-const playerControlVolume = document.querySelector(
-  ".player-control__volume input"
-);
+const playerControlVolume = document.querySelector(".player-control__volume i");
+const volumeInputElem = document.querySelector(".volume__input ");
 let playerPrograssBar = document.querySelector(".player-prograss__fit");
 let isPlaying = false;
 // release songs
@@ -231,6 +230,17 @@ function updatePorgrassBar(e) {
   }
 }
 
+// volume handler
+function openVolumeHandler() {
+  volumeInputElem.classList.toggle("volume-inpt-active");
+}
+
+let inputVolume;
+function changeVolumeHanler() {
+  inputVolume = volumeInputElem.value / 100;
+  mainAudio.volume = inputVolume;
+}
+
 // find searched songs
 let relatedSongs;
 function findRelatedSongs() {
@@ -273,6 +283,8 @@ playerPlayBtn.addEventListener("click", function () {
   }
 });
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
+playerControlVolume.addEventListener("click", openVolumeHandler);
+volumeInputElem.addEventListener("input", changeVolumeHanler);
 headerSearchInput.addEventListener("input", findRelatedSongs);
 headerSearchInput.addEventListener("focus", openRelatedSongs);
 headerSearchInput.addEventListener("blur", closeRelatedSongs);
