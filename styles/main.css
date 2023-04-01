@@ -17,6 +17,7 @@
 body {
   background: #000;
   overflow-x: hidden;
+  zoom: 0.9;
 }
 
 ::selection {
@@ -330,7 +331,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 10px;
   border-radius: 50%;
   background: #fff;
-  cursor: grab;
+  cursor: pointer;
   box-shadow: 0 0 2px 0 #555;
   transition: background 0.3s ease-in-out;
 }
@@ -342,12 +343,41 @@ input[type="range"]::-webkit-slider-runnable-track {
   background: transparent;
 }
 
-.volume-inpt-active {
-  display: block;
-}
-
 .player-control__setting {
 }
+
+.settings-speed-container {
+  display: none;
+  flex-direction: column;
+  border-radius: 0.6rem;
+  position: absolute;
+  bottom: 73px;
+  right: 93px;
+  width: 3.2rem;
+  overflow: hidden;
+}
+
+.speed-item {
+  display: flex;
+  background: #fff;
+  color: #fc3b00;
+  text-align: center;
+  border: 1px solid gainsboro;
+  padding: 0.6rem 1rem;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  transition: 0.4s ease;
+}
+
+.speed-item:hover {
+  background: #e3e1e1;
+}
+
+.controls-active {
+  display: flex;
+}
+
 .player-control__playlist {
 }
 

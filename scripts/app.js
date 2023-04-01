@@ -166,6 +166,7 @@ const playerControlDuration = document.querySelector(
 const playerControlCurrent = document.querySelector(".player-control__current");
 const playerControlVolume = document.querySelector(".player-control__volume i");
 const volumeInputElem = document.querySelector(".volume__input ");
+const settingsSpeedElem = document.querySelector(".settings-speed-container");
 let playerPrograssBar = document.querySelector(".player-prograss__fit");
 const musicplayerNextBtn = document.querySelector(
   ".music-player-icons .fa-forward"
@@ -179,6 +180,10 @@ const musicplayerRepeatBtn = document.querySelector(
 const musicplayerRandomBtn = document.querySelector(
   ".music-player-icons .fa-random"
 );
+const musicplayerSettingBtn = document.querySelector(
+  ".player-control__setting .fa-gear"
+);
+const speedItemsElem = document.querySelectorAll(".speed-item");
 let isPlaying = false;
 let MusicCounter = null;
 // release songs
@@ -244,9 +249,9 @@ function updatePorgrassBar(e) {
   }
 }
 
-// volume handler
+// volume  handler
 function openVolumeHandler() {
-  volumeInputElem.classList.toggle("volume-inpt-active");
+  volumeInputElem.classList.toggle("controls-active");
 }
 
 let inputVolume;
@@ -283,8 +288,19 @@ function repeatMusicHandler() {
 let randomNum;
 function playRandomHandler() {
   randomNum = Math.floor(Math.random() * songs.length);
-  loadMusic(randomNum)
+  loadMusic(randomNum);
 }
+
+// speed settings
+function openSettingHandler() {
+  settingsSpeedElem.classList.toggle("controls-active");
+}
+
+speedItemsElem.forEach(function (item) {
+  item.addEventListener("click", function (event) {
+    mainAudio.playbackRate = event.target.textContent.split("X")[0];
+  });
+});
 
 // find searched songs
 let relatedSongs;
@@ -334,6 +350,7 @@ musicplayerNextBtn.addEventListener("click", nextMusicHandler);
 musicplayerPrevBtn.addEventListener("click", PrevMusicHandler);
 musicplayerRepeatBtn.addEventListener("click", repeatMusicHandler);
 musicplayerRandomBtn.addEventListener("click", playRandomHandler);
+musicplayerSettingBtn.addEventListener("click", openSettingHandler);
 headerSearchInput.addEventListener("input", findRelatedSongs);
 headerSearchInput.addEventListener("focus", openRelatedSongs);
 headerSearchInput.addEventListener("blur", closeRelatedSongs);
