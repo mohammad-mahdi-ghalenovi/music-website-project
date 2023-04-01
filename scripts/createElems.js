@@ -30,14 +30,17 @@ function createIntroMuics(music) {
 function createReleaseMusics(music) {
   releaseContentContainer.insertAdjacentHTML(
     "beforeend",
-    ' <div class="release-content"><div class="release-content__img"><img src="' +
+    '<div class="release-content">  <div class="release-content__img">    <img src="' +
       music.cover +
-      '" alt=""></div><div class="release-content__info">        <div class="release-name">' +
+      '" />    <i class="fa fa-play-circle release-play" onclick="loadMusic(' +
+      music.id +
+      ')"></i>  </div>  <div class="release-content__info">    <div class="release-name">' +
       music.musicName +
-      '</div>        <div class="release-artist">' +
+      '</div>    <div class="release-artist">' +
       music.artist +
-      "</div></div></div> "
+      "</div>  </div></div> "
   );
+  iconHovers();
 }
 
 // searched songs
@@ -47,7 +50,33 @@ function createSearchedSongs(relatedSongs) {
   relatedSongs.forEach(function (music) {
     searchedSongsWrapper.insertAdjacentHTML(
       "beforeend",
-      '<div class="searched-content">    <div class="searched__img">         <img src="'+ music.cover +'" alt="">   </div>   <div class="searched-info">         <div class="searched__musicname">'+ music.musicName +'</div>         <div class="searched__artist">'+ music.artist +'</div>   </div></div> '
+      '<div class="searched-content">    <div class="searched__img">         <img src="' +
+        music.cover +
+        '" alt="">   </div>   <div class="searched-info">         <div class="searched__musicname">' +
+        music.musicName +
+        '</div>         <div class="searched__artist">' +
+        music.artist +
+        "</div>   </div></div> "
     );
+  });
+}
+
+// release hovers
+function iconHovers() {
+  releaseContentImg = document.querySelectorAll(".release-content__img img");
+  let targetIcon;
+
+  releaseContentImg.forEach(function (song) {
+    song.addEventListener("mouseover", function (event) {
+      targetIcon = event.target.nextElementSibling;
+
+      targetIcon.classList.add("release-icon-active");
+      event.target.classList.add("release-img-active");
+    });
+
+    song.addEventListener("mouseout", function (event) {
+      targetIcon.classList.remove("release-icon-active");
+      event.target.classList.remove("release-img-active");
+    });
   });
 }
