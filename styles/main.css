@@ -303,6 +303,19 @@ body {
 }
 .player-control__volume {
 }
+
+.volume__input {
+  rotate: -90deg;
+  position: absolute;
+  right: 100px;
+  top: -76px;
+  display: none;
+}
+
+.volume-inpt-active {
+  display: block;
+}
+
 .player-control__setting {
 }
 .player-control__playlist {
@@ -684,6 +697,10 @@ body {
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #fc3b00;
+}
+
+.fa {
+  cursor: pointer;
 }
 
 /* RESPONSIVE */
