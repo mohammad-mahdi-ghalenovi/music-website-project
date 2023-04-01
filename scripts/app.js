@@ -167,14 +167,17 @@ const playerControlCurrent = document.querySelector(".player-control__current");
 const playerControlVolume = document.querySelector(".player-control__volume i");
 const volumeInputElem = document.querySelector(".volume__input ");
 let playerPrograssBar = document.querySelector(".player-prograss__fit");
-let isPlaying = false;
-let MusicCounter = null;
-let musicplayerNextBtn = document.querySelector(
+const musicplayerNextBtn = document.querySelector(
   ".music-player-icons .fa-forward"
 );
-let musicplayerPrevBtn = document.querySelector(
+const musicplayerPrevBtn = document.querySelector(
   ".music-player-icons .fa-backward"
 );
+const musicplayerRepeatBtn = document.querySelector(
+  ".music-player-icons .fa-repeat"
+);
+let isPlaying = false;
+let MusicCounter = null;
 // release songs
 const releaseContentContainer = document.querySelector(".new-released-wrapper");
 let releaseContentImg = document.querySelectorAll(".release-content__img img");
@@ -268,6 +271,11 @@ function PrevMusicHandler() {
   loadMusic(MusicCounter);
 }
 
+// repeat music handler
+function repeatMusicHandler() {
+  mainAudio.currentTime = 0;
+}
+
 // find searched songs
 let relatedSongs;
 function findRelatedSongs() {
@@ -314,6 +322,7 @@ playerControlVolume.addEventListener("click", openVolumeHandler);
 volumeInputElem.addEventListener("input", changeVolumeHanler);
 musicplayerNextBtn.addEventListener("click", nextMusicHandler);
 musicplayerPrevBtn.addEventListener("click", PrevMusicHandler);
+musicplayerRepeatBtn.addEventListener("click", repeatMusicHandler);
 headerSearchInput.addEventListener("input", findRelatedSongs);
 headerSearchInput.addEventListener("focus", openRelatedSongs);
 headerSearchInput.addEventListener("blur", closeRelatedSongs);
