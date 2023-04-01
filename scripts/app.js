@@ -176,6 +176,9 @@ const musicplayerPrevBtn = document.querySelector(
 const musicplayerRepeatBtn = document.querySelector(
   ".music-player-icons .fa-repeat"
 );
+const musicplayerRandomBtn = document.querySelector(
+  ".music-player-icons .fa-random"
+);
 let isPlaying = false;
 let MusicCounter = null;
 // release songs
@@ -276,6 +279,13 @@ function repeatMusicHandler() {
   mainAudio.currentTime = 0;
 }
 
+// play a random music
+let randomNum;
+function playRandomHandler() {
+  randomNum = Math.floor(Math.random() * songs.length);
+  loadMusic(randomNum)
+}
+
 // find searched songs
 let relatedSongs;
 function findRelatedSongs() {
@@ -323,6 +333,7 @@ volumeInputElem.addEventListener("input", changeVolumeHanler);
 musicplayerNextBtn.addEventListener("click", nextMusicHandler);
 musicplayerPrevBtn.addEventListener("click", PrevMusicHandler);
 musicplayerRepeatBtn.addEventListener("click", repeatMusicHandler);
+musicplayerRandomBtn.addEventListener("click", playRandomHandler);
 headerSearchInput.addEventListener("input", findRelatedSongs);
 headerSearchInput.addEventListener("focus", openRelatedSongs);
 headerSearchInput.addEventListener("blur", closeRelatedSongs);
