@@ -168,6 +168,13 @@ const playerControlVolume = document.querySelector(".player-control__volume i");
 const volumeInputElem = document.querySelector(".volume__input ");
 let playerPrograssBar = document.querySelector(".player-prograss__fit");
 let isPlaying = false;
+let MusicCounter = null;
+let musicplayerNextBtn = document.querySelector(
+  ".music-player-icons .fa-forward"
+);
+let musicplayerPrevBtn = document.querySelector(
+  ".music-player-icons .fa-backward"
+);
 // release songs
 const releaseContentContainer = document.querySelector(".new-released-wrapper");
 let releaseContentImg = document.querySelectorAll(".release-content__img img");
@@ -178,6 +185,7 @@ const searchedSongsWrapper = document.querySelector(".searched-songs-wrapper");
 
 // setPlayer details
 function loadMusic(muiscID) {
+  MusicCounter = muiscID;
   muiscID = muiscID - 1;
   playerInfoName.textContent = songs[muiscID].musicName;
   playerInfoArtist.textContent = songs[muiscID].artist;
@@ -241,6 +249,25 @@ function changeVolumeHanler() {
   mainAudio.volume = inputVolume;
 }
 
+// next and Prev music handler
+function nextMusicHandler() {
+  MusicCounter = MusicCounter + 1;
+  if (MusicCounter > songs.length) {
+    MusicCounter = 0;
+  }
+
+  loadMusic(MusicCounter);
+}
+
+function PrevMusicHandler() {
+  MusicCounter = MusicCounter - 1;
+  if (MusicCounter - 1 < 0) {
+    MusicCounter = songs.length;
+  }
+
+  loadMusic(MusicCounter);
+}
+
 // find searched songs
 let relatedSongs;
 function findRelatedSongs() {
@@ -285,6 +312,8 @@ playerPlayBtn.addEventListener("click", function () {
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 playerControlVolume.addEventListener("click", openVolumeHandler);
 volumeInputElem.addEventListener("input", changeVolumeHanler);
+musicplayerNextBtn.addEventListener("click", nextMusicHandler);
+musicplayerPrevBtn.addEventListener("click", PrevMusicHandler);
 headerSearchInput.addEventListener("input", findRelatedSongs);
 headerSearchInput.addEventListener("focus", openRelatedSongs);
 headerSearchInput.addEventListener("blur", closeRelatedSongs);
