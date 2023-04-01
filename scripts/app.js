@@ -33,7 +33,20 @@ let swiper2 = new Swiper(".mySwiper2", {
 window.addEventListener("resize", function () {
   if (window.innerWidth < 460) {
     swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  } else {
+    swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
       spaceBetween: 20,
       pagination: {
         el: ".swiper-pagination",

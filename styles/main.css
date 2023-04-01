@@ -157,10 +157,12 @@ body {
   overflow: hidden;
 }
 
-.intro-song__img img {
+.intro-song__img .img {
   width: 100%;
   height: 100%;
   border-radius: 0.6rem;
+  background-position: center;
+  background-size: cover;
 }
 
 .intro-song-infos {

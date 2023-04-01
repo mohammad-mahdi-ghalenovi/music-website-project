@@ -13,9 +13,9 @@ songs.forEach(function (music) {
 function createIntroMuics(music) {
   introSongsWrapper.insertAdjacentHTML(
     "beforeend",
-    '<div class="intro-song-content swiper-slide "> <div class="intro-song__img">    <img src="' +
+    '<div class="intro-song-content swiper-slide "> <div class="intro-song__img">    <div class="img" style="background-image : url(' +
       music.cover +
-      '" alt="" />  </div>  <div class="intro-song-infos">    <div class="intro-song__name">' +
+      ' )" alt="" ></div>  </div>  <div class="intro-song-infos">    <div class="intro-song__name">' +
       music.musicName +
       '</div>    <div class="intro-song__artist">' +
       music.artist +
