@@ -98,7 +98,7 @@ let songs = [
     id: 5,
     artist: "Billie Eilish",
     musicName: "Bad Guy",
-    path: " https://mupo.ir/StaticFiles/Songs/432Hz/903833488119278054.mp3",
+    path: " https://dl.baarzesh.net/music/2021/11/Billie_Eilish-_Bad_Guy_320.mp3",
     cover: "images/5.jpg",
   },
   {
@@ -119,7 +119,7 @@ let songs = [
     id: 8,
     artist: "021 - Kid",
     musicName: "Baby Bad",
-    path: " https://s2.uupload.ir/filelink/Ab5S7weAyfUW_c301010e4c/baby_bad_iub5.mp3",
+    path: "https://soundcloud.com/021kid/baby-bad",
     cover: "images/8.jpg",
   },
   {
@@ -133,7 +133,7 @@ let songs = [
     id: 10,
     artist: "Koorosh",
     musicName: "Shahkare",
-    path: " http://xxx.atlas-music.ir/archive/K/Koorosh/1399/Koorosh%20Ft%20Sami%20Low%20-%20Shahkar%20128.mp3",
+    path: " http://dl.shahreahang.com/radiojavan/dey-98/Koorosh-Shahkar%20(Ft%20Sami%20Low%20andamp;%20Pedi%20I)-320.mp3",
     cover: "images/10.jpg",
   },
   {

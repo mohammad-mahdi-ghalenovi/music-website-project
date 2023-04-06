@@ -13,7 +13,7 @@ songs.forEach(function (music) {
 function createIntroMuics(music) {
   introSongsWrapper.insertAdjacentHTML(
     "beforeend",
-    '<div class="intro-song-content swiper-slide "> <div class="intro-song__img">    <div class="img" style="background-image : url(' +
+    '<div class="intro-song-content swiper-slide prevent-select "> <div class="intro-song__img">    <div class="img" style="background-image : url(' +
       music.cover +
       ' )" alt="" ></div>  </div>  <div class="intro-song-infos">    <div class="intro-song__name">' +
       music.musicName +
@@ -30,7 +30,7 @@ function createIntroMuics(music) {
 function createReleaseMusics(music) {
   releaseContentContainer.insertAdjacentHTML(
     "beforeend",
-    '<div class="release-content">  <div class="release-content__img">    <img src="' +
+    '<div class="release-content prevent-select">  <div class="release-content__img">    <img src="' +
       music.cover +
       '" />    <i class="fa fa-play-circle release-play" onclick="loadMusic(' +
       music.id +
@@ -50,7 +50,7 @@ function createSearchedSongs(relatedSongs) {
   relatedSongs.forEach(function (music) {
     searchedSongsWrapper.insertAdjacentHTML(
       "beforeend",
-      '<div class="searched-content">    <div class="searched__img">         <img src="' +
+      '<div class="searched-content prevent-select">    <div class="searched__img">         <img src="' +
         music.cover +
         '" alt="">   </div>   <div class="searched-info">         <div class="searched__musicname">' +
         music.musicName +

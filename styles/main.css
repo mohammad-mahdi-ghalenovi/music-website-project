@@ -20,6 +20,11 @@ body {
   zoom: 0.9;
 }
 
+.prevent-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 ::selection {
   /* background: #111; */
 }
@@ -425,6 +430,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 .top-content-buttons {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 
 .top-content__btn {
