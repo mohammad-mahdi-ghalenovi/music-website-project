@@ -53,8 +53,8 @@
         <div class="bottom-header-wrapper">
           <div class="header-content-slider">
             <img
-              class="header-content__img"
-              src="images/wallpaperflare.com_wallpaper_9.jpg"
+              class="header-content__img prevent-select"
+              src="images/header-bg2.jpg"
               alt=""
             />
             <h1
@@ -70,9 +70,6 @@
     <main>
       <section class="intro-songs-container swiper mySwiper">
         <div class="intro-songs-wrapper swiper-wrapper"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
       </section>
 
       <section class="music-player-wrapper">
@@ -106,9 +103,9 @@
             <div class="player-control__setting">
               <i class="fa fa-gear"></i>
               <div class="settings-speed-container">
-                    <div class="speed-item">0.5X</div>
-                    <div class="speed-item">1X</div>
-                    <div class="speed-item">2X</div>
+                <div class="speed-item">0.5X</div>
+                <div class="speed-item">1X</div>
+                <div class="speed-item">2X</div>
               </div>
             </div>
             <div class="player-control__playlist">
@@ -122,23 +119,25 @@
         </div>
       </section>
 
-      <section class="top-songs-container">
+      <section class="top-songs-container prevent-select">
         <div class="container">
           <div class="top-content-buttons">
             <a
               href="#"
               class="top-content__btn wow animate__animated animate__fadeInDown"
+              draggable="false"
               >Podcast Muiscs</a
             ><a
               href="#"
               class="top-content__btn wow animate__animated animate__fadeInUp"
+              draggable="false"
               >Buy Premium</a
             >
           </div>
           <div class="top-content-playlists">
             <div class="top-content__playlist">
               <div class="playlist-content__img">
-                <img src="images/logo.png" alt="" />
+                <img src="images/playlist1.jpg" alt="" />
               </div>
               <div class="playlist-content__name">
                 The best and most viewed songs in month
@@ -149,7 +148,7 @@
             </div>
             <div class="top-content__playlist">
               <div class="playlist-content__img">
-                <img src="images/logo.png" alt="" />
+                <img src="images/playlist2.jpg" alt="" />
               </div>
               <div class="playlist-content__name">
                 The best and most viewed songs in month
@@ -241,4 +240,4 @@
     <script src="scripts/createElems.js"></script>
   </body>
 </html>
-<!-- setting // playlist -->
+<!-- playlist -->

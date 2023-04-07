@@ -1,14 +1,6 @@
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   spaceBetween: 20,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
 });
 
 let swiper2 = new Swiper(".mySwiper2", {
@@ -24,39 +16,18 @@ let swiper2 = new Swiper(".mySwiper2", {
     modifier: 1,
     slideShadows: true,
   },
-  pagination: {
-    el: ".swiper-pagination",
-  },
 });
 
 // 460
 window.addEventListener("resize", function () {
-  if (window.innerWidth < 460) {
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+  if (window.innerWidth < 675) {
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg3.jpg");
   } else {
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg2.jpg");
   }
 });
 
@@ -98,7 +69,7 @@ let songs = [
     id: 5,
     artist: "Billie Eilish",
     musicName: "Bad Guy",
-    path: " https://mupo.ir/StaticFiles/Songs/432Hz/903833488119278054.mp3",
+    path: " https://dl.baarzesh.net/music/2021/11/Billie_Eilish-_Bad_Guy_320.mp3",
     cover: "images/5.jpg",
   },
   {
@@ -119,7 +90,7 @@ let songs = [
     id: 8,
     artist: "021 - Kid",
     musicName: "Baby Bad",
-    path: " https://s2.uupload.ir/filelink/Ab5S7weAyfUW_c301010e4c/baby_bad_iub5.mp3",
+    path: "https://soundcloud.com/021kid/baby-bad",
     cover: "images/8.jpg",
   },
   {
@@ -133,7 +104,7 @@ let songs = [
     id: 10,
     artist: "Koorosh",
     musicName: "Shahkare",
-    path: " http://xxx.atlas-music.ir/archive/K/Koorosh/1399/Koorosh%20Ft%20Sami%20Low%20-%20Shahkar%20128.mp3",
+    path: " http://dl.shahreahang.com/radiojavan/dey-98/Koorosh-Shahkar%20(Ft%20Sami%20Low%20andamp;%20Pedi%20I)-320.mp3",
     cover: "images/10.jpg",
   },
   {
@@ -324,7 +295,7 @@ function findRelatedSongs() {
       .includes(headerSearchInput.value.toLowerCase());
   });
 
-  createSearchedSongs(relatedSongs);
+  createSearchedSongs(relatedSongs); //  createElement.js
 }
 
 function openRelatedSongs() {
@@ -334,12 +305,6 @@ function openRelatedSongs() {
 function closeRelatedSongs() {
   searchedSongsContainer.classList.remove("related-songs-active");
 }
-
-// window events
-window.onload = function () {
-  bottomHeaderImg.classList.add("header-img-active");
-  document.body.style.opacity = 1;
-};
 
 window.addEventListener("scroll", function () {
   if (window.scrollY > 0) {
@@ -356,6 +321,34 @@ playerPlayBtn.addEventListener("click", function () {
     playMusic();
   }
 });
+
+// 🔴 window events and Responsive
+window.onload = function () {
+  bottomHeaderImg.classList.add("header-img-active");
+  document.body.style.opacity = 1;
+  if (window.innerWidth < 460) {
+    //swiper onload template
+    swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    });
+  } else {
+    swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    });
+  }
+  if (window.innerWidth < 675) {
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg3.jpg");
+  } else {
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg2.jpg");
+  }
+};
+
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 playerControlVolume.addEventListener("click", openVolumeHandler);
 volumeInputElem.addEventListener("input", changeVolumeHanler);
