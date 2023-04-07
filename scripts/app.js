@@ -1,14 +1,6 @@
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   spaceBetween: 20,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
 });
 
 let swiper2 = new Swiper(".mySwiper2", {
@@ -24,39 +16,18 @@ let swiper2 = new Swiper(".mySwiper2", {
     modifier: 1,
     slideShadows: true,
   },
-  pagination: {
-    el: ".swiper-pagination",
-  },
 });
 
 // 460
 window.addEventListener("resize", function () {
-  if (window.innerWidth < 460) {
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+  if (window.innerWidth < 675) {
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg3.jpg");
   } else {
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg2.jpg");
   }
 });
 
@@ -324,7 +295,7 @@ function findRelatedSongs() {
       .includes(headerSearchInput.value.toLowerCase());
   });
 
-  createSearchedSongs(relatedSongs); // createElement.js
+  createSearchedSongs(relatedSongs); //  createElement.js
 }
 
 function openRelatedSongs() {
@@ -334,12 +305,6 @@ function openRelatedSongs() {
 function closeRelatedSongs() {
   searchedSongsContainer.classList.remove("related-songs-active");
 }
-
-// window events
-window.onload = function () {
-  bottomHeaderImg.classList.add("header-img-active");
-  document.body.style.opacity = 1;
-};
 
 window.addEventListener("scroll", function () {
   if (window.scrollY > 0) {
@@ -356,6 +321,34 @@ playerPlayBtn.addEventListener("click", function () {
     playMusic();
   }
 });
+
+// 🔴 window events and Responsive
+window.onload = function () {
+  bottomHeaderImg.classList.add("header-img-active");
+  document.body.style.opacity = 1;
+  if (window.innerWidth < 460) {
+    //swiper onload template
+    swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    });
+  } else {
+    swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    });
+  }
+  if (window.innerWidth < 675) {
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg3.jpg");
+  } else {
+    document
+      .querySelector(".header-content__img")
+      .setAttribute("src", "images/header-bg2.jpg");
+  }
+};
+
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
 playerControlVolume.addEventListener("click", openVolumeHandler);
 volumeInputElem.addEventListener("input", changeVolumeHanler);

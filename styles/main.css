@@ -101,7 +101,6 @@ body {
   display: flex;
   height: 38rem;
   width: 100%;
-  background-color: #202326;
 }
 
 .header-content-slider {
@@ -117,6 +116,9 @@ body {
   width: 100%;
   height: 150%;
   transition: 1.4s ease;
+  background-image: url(images/header-bg2.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .bottom-header__title {
@@ -851,6 +853,10 @@ input[type="range"]::-webkit-slider-runnable-track {
     grid-row: 3/4;
     grid-column: 1/-1;
     justify-self: center;
+  }
+
+  .header-content__img {
+    height: 170%;
   }
 }
 
