@@ -877,11 +877,3 @@ input[type="range"]::-webkit-slider-runnable-track {
     margin-bottom: 1rem;
   }
 }
-
-/* additional media query`s */
-
-@media only screen and (max-width: 1280px) {
-  .bottom-header-wrapper {
-    height: 31rem;
-  }
-}
