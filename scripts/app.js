@@ -324,7 +324,7 @@ function findRelatedSongs() {
       .includes(headerSearchInput.value.toLowerCase());
   });
 
-  createSearchedSongs(relatedSongs);
+  createSearchedSongs(relatedSongs); // createElement.js
 }
 
 function openRelatedSongs() {
