@@ -369,10 +369,12 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .speed-item {
   display: flex;
-  background: #fff;
+  background: #111111c5;
+  backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
   color: #fc3b00;
+  font-weight: bold;
   text-align: center;
-  border: 1px solid gainsboro;
+  border: 1px solid rgba(0, 0, 0, 0.299);
   padding: 0.6rem 1rem;
   justify-content: center;
   cursor: pointer;
