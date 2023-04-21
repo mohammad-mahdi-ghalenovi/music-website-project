@@ -237,7 +237,7 @@ function createIntroMuics(music) {
               } )" alt="" ></div>
         </div>
     <div class="intro-song-infos"> 
-        <div class="intro-song__name">${(music, musicName)}</div>  
+        <div class="intro-song__name">${(music.musicName)}</div>  
        <div class="intro-song__artist">${music.artist}</div>  
     </div>  
          
