@@ -228,36 +228,47 @@ songs.forEach(function (music) {
   }
 });
 
+// Intro Musics
 function createIntroMuics(music) {
-  introSongsWrapper.insertAdjacentHTML(
-    "beforeend",
-    '<div class="intro-song-content swiper-slide prevent-select "> <div class="intro-song__img">    <div class="img" style="background-image : url(' +
-      music.cover +
-      ' )" alt="" ></div>  </div>  <div class="intro-song-infos">    <div class="intro-song__name">' +
-      music.musicName +
-      '</div>    <div class="intro-song__artist">' +
-      music.artist +
-      '</div>  </div>  <div class="intro-song-control">    <div class="intro-control__play"><i class="fa fa-play" onclick="loadMusic(' +
-      music.id +
-      ')"></i></div>     <div class="intro-control__like"><i class="fa fa-heart"></i></div>    <div class="intro-control__download"><i class="fa fa-download"></i></div>    <div class="intro-control__add"><i class="fa fa-plus"></i></div>  </div>  </div>'
-  );
+  introSongsWrapper.innerHTML += `<div class="intro-song-content swiper-slide prevent-select ">
+        <div class="intro-song__img">    
+              <div class="img" style="background-image : url(${
+                music.cover
+              } )" alt="" ></div>
+        </div>
+    <div class="intro-song-infos"> 
+        <div class="intro-song__name">${(music, musicName)}</div>  
+       <div class="intro-song__artist">${music.artist}</div>  
+    </div>  
+         
+       <div class="intro-song-control">
+               <div class="intro-control__play"><i class="fa fa-play" onclick="loadMusic(${
+                 music.id
+               })"></i></div> 
+               <div class="intro-control__like"><i class="fa fa-heart"></i></div>  
+                <div class="intro-control__download"><i class="fa fa-download"></i></div>   
+                <div class="intro-control__add"><i class="fa fa-plus"></i></div>  
+       </div> 
+    </div>`;
 }
 
 // new release
-
 function createReleaseMusics(music) {
-  releaseContentContainer.insertAdjacentHTML(
-    "beforeend",
-    '<div class="release-content prevent-select">  <div class="release-content__img">    <img src="' +
-      music.cover +
-      '" />    <i class="fa fa-play-circle release-play" onclick="loadMusic(' +
-      music.id +
-      ')"></i>  </div>  <div class="release-content__info">    <div class="release-name">' +
-      music.musicName +
-      '</div>    <div class="release-artist">' +
-      music.artist +
-      "</div>  </div></div> "
-  );
+  releaseContentContainer.innerHTML += `
+  <div class="release-content prevent-select">  
+
+        <div class="release-content__img">   
+              <img src="${music.cover}" /> 
+              <i class="fa fa-play-circle release-play" onclick="loadMusic(${music.id})"></i>    
+        </div> 
+
+       <div class="release-content__info">    
+               <div class="release-name">${music.musicName}</div>  
+                <div class="release-artist">${music.artist}</div>
+         </div>
+         
+  </div>`;
+
   iconHovers();
 }
 
@@ -266,16 +277,18 @@ function createSearchedSongs(relatedSongs) {
   searchedSongsWrapper.innerHTML = "";
 
   relatedSongs.forEach(function (music) {
-    searchedSongsWrapper.insertAdjacentHTML(
-      "beforeend",
-      '<div class="searched-content prevent-select">    <div class="searched__img">         <img src="' +
-        music.cover +
-        '" alt="">   </div>   <div class="searched-info">         <div class="searched__musicname">' +
-        music.musicName +
-        '</div>         <div class="searched__artist">' +
-        music.artist +
-        "</div>   </div></div> "
-    );
+    searchedSongsWrapper.innerHTML += `
+    <div class="searched-content prevent-select">    
+          <div class="searched__img">         
+              <img src="${music.cover}" alt="">   
+          </div>  
+    
+         <div class="searched-info">
+                <div class="searched__musicname">${music.musicName}</div>
+                <div class="searched__artist">${music.artist}</div>
+             </div>
+             
+     </div> `;
   });
 }
 
