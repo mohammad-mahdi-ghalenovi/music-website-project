@@ -1,6 +1,15 @@
-let swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   spaceBetween: 20,
+  breakpoints: {
+    1025: {
+      slidesPerView: 2,
+    },
+    "@0.00": {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+  },
 });
 
 let swiper2 = new Swiper(".mySwiper2", {
@@ -18,125 +27,9 @@ let swiper2 = new Swiper(".mySwiper2", {
   },
 });
 
-// 460
-window.addEventListener("resize", function () {
-  if (window.innerWidth < 675) {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg3.jpg");
-  } else {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg2.jpg");
-  }
-});
-
 // header
 let bottomHeaderTitle = document.querySelector(".bottom-header__title");
 let bottomHeaderImg = document.querySelector(".header-content__img");
-
-// songs
-let songs = [
-  {
-    id: 1,
-    artist: "Billie Eilish ",
-    musicName: "No time to Die",
-    path: " https://files.musicfeed.ir/2020/02/Billie-Eilish-No-Time-To-Die-musicfeed.ir_.mp3?128kb",
-    cover: "images/1.jpg",
-  },
-  {
-    id: 2,
-    artist: "Billie Eilish ",
-    musicName: "Everything i Wanted",
-    path: " https://files.musicfeed.ir/2019/11/Billie-Eilish-everything-i-wanted-128.mp3",
-    cover: "images/2.jpg",
-  },
-  {
-    id: 3,
-    artist: "Billie Eilish ",
-    musicName: "Happier Than ever",
-    path: " https://files.musicfeed.ir/dir/2021/7/Billie%20Eilish%20-%20Happier%20Than%20Ever/Billie%20Eilish%20Happier%20Than%20Ever.mp3",
-    cover: "images/3.jpg",
-  },
-  {
-    id: 4,
-    artist: "Billie Eilish ",
-    musicName: "Listen Before i go",
-    path: " http://bayanbox.ir/download/9131075167424378680/Billie-Eilish-listen-before-i-go.mp3",
-    cover: "images/4.jpg",
-  },
-  {
-    id: 5,
-    artist: "Billie Eilish",
-    musicName: "Bad Guy",
-    path: " https://dl.baarzesh.net/music/2021/11/Billie_Eilish-_Bad_Guy_320.mp3",
-    cover: "images/5.jpg",
-  },
-  {
-    id: 6,
-    artist: "Olivia Rodrigo",
-    musicName: "Drivers License",
-    path: " https://files.musicfeed.ir/dir/2021/5/Olivia%20Rodrigo%20drivers%20license-128.mp3",
-    cover: "images/6.jpg",
-  },
-  {
-    id: 7,
-    artist: "Parsalip",
-    musicName: "Adam Barfi",
-    path: " https://dl.melonmusic.ir/1401/Parsalip%20-%20Adam%20Barfi%20[128].mp3",
-    cover: "images/7.jpg",
-  },
-  {
-    id: 8,
-    artist: "021 - Kid",
-    musicName: "Baby Bad",
-    path: "https://soundcloud.com/021kid/baby-bad",
-    cover: "images/8.jpg",
-  },
-  {
-    id: 9,
-    artist: "Poobon",
-    musicName: "Bimarefat",
-    path: " https://dl.my-ahangha.ir/up/2019/Poobon%20Ft%20Behzad%20Leito%20-%20Bi%20Marefat%20128.mp3",
-    cover: "images/9.jpg",
-  },
-  {
-    id: 10,
-    artist: "Koorosh",
-    musicName: "Shahkare",
-    path: " http://dl.shahreahang.com/radiojavan/dey-98/Koorosh-Shahkar%20(Ft%20Sami%20Low%20andamp;%20Pedi%20I)-320.mp3",
-    cover: "images/10.jpg",
-  },
-  {
-    id: 11,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: "images/11.jpg",
-  },
-  {
-    id: 12,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: "images/12.jpg",
-  },
-  {
-    id: 13,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: "images/13.jpg",
-  },
-  {
-    id: 14,
-    artist: "Billie Illish",
-    musicName: "No Time To Die",
-    path: ".mp3",
-    cover: "images/14.jpg",
-  },
-];
-
 const introSongsWrapper = document.querySelector(".intro-songs-wrapper");
 const mainAudio = document.querySelector(".main-audio");
 // music Player
@@ -322,31 +215,128 @@ playerPlayBtn.addEventListener("click", function () {
   }
 });
 
+// 🔴  Create all songs
+// intro songs
+let i = 0;
+
+songs.forEach(function (music) {
+  i++;
+  if (i < 5) {
+    createIntroMuics(music);
+  } else {
+    createReleaseMusics(music);
+  }
+});
+
+// Intro Musics
+function createIntroMuics(music) {
+  introSongsWrapper.innerHTML += `<div class="intro-song-content swiper-slide prevent-select ">
+        <div class="intro-song__img">    
+              <div class="img" style="background-image : url(${
+                music.cover
+              } )" alt="" ></div>
+        </div>
+    <div class="intro-song-infos"> 
+        <div class="intro-song__name">${(music, musicName)}</div>  
+       <div class="intro-song__artist">${music.artist}</div>  
+    </div>  
+         
+       <div class="intro-song-control">
+               <div class="intro-control__play"><i class="fa fa-play" onclick="loadMusic(${
+                 music.id
+               })"></i></div> 
+               <div class="intro-control__like"><i class="fa fa-heart"></i></div>  
+                <div class="intro-control__download"><i class="fa fa-download"></i></div>   
+                <div class="intro-control__add"><i class="fa fa-plus"></i></div>  
+       </div> 
+    </div>`;
+}
+
+// new release
+function createReleaseMusics(music) {
+  releaseContentContainer.innerHTML += `
+  <div class="release-content prevent-select">  
+
+        <div class="release-content__img">   
+              <img src="${music.cover}" /> 
+              <i class="fa fa-play-circle release-play" onclick="loadMusic(${music.id})"></i>    
+        </div> 
+
+       <div class="release-content__info">    
+               <div class="release-name">${music.musicName}</div>  
+                <div class="release-artist">${music.artist}</div>
+         </div>
+         
+  </div>`;
+
+  iconHovers();
+}
+
+// searched songs
+function createSearchedSongs(relatedSongs) {
+  searchedSongsWrapper.innerHTML = "";
+
+  relatedSongs.forEach(function (music) {
+    searchedSongsWrapper.innerHTML += `
+    <div class="searched-content prevent-select">    
+          <div class="searched__img">         
+              <img src="${music.cover}" alt="">   
+          </div>  
+    
+         <div class="searched-info">
+                <div class="searched__musicname">${music.musicName}</div>
+                <div class="searched__artist">${music.artist}</div>
+             </div>
+             
+     </div> `;
+  });
+}
+
+// release hovers
+function iconHovers() {
+  releaseContentImg = document.querySelectorAll(".release-content__img img");
+  let targetIcon;
+
+  releaseContentImg.forEach(function (song) {
+    song.addEventListener("mouseover", function (event) {
+      targetIcon = event.target.nextElementSibling;
+
+      targetIcon.classList.add("release-icon-active");
+      event.target.classList.add("release-img-active");
+    });
+
+    song.addEventListener("mouseout", function (event) {
+      targetIcon.classList.remove("release-icon-active");
+      event.target.classList.remove("release-img-active");
+    });
+  });
+}
+
 // 🔴 window events and Responsive
 window.onload = function () {
   bottomHeaderImg.classList.add("header-img-active");
   document.body.style.opacity = 1;
-  if (window.innerWidth < 460) {
-    //swiper onload template
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    });
-  } else {
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    });
-  }
-  if (window.innerWidth < 675) {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg3.jpg");
-  } else {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg2.jpg");
-  }
+  // if (window.innerWidth < 460) {
+  //   //swiper onload template
+  //   swiper = new Swiper(".mySwiper", {
+  //     slidesPerView: 1,
+  //     spaceBetween: 20,
+  //   });
+  // } else {
+  //   swiper = new Swiper(".mySwiper", {
+  //     slidesPerView: 2,
+  //     spaceBetween: 20,
+  //   });
+  // }
+  // if (window.innerWidth < 675) {
+  //   document
+  //     .querySelector(".header-content__img")
+  //     .setAttribute("src", "images/header-bg3.jpg");
+  // } else {
+  //   document
+  //     .querySelector(".header-content__img")
+  //     .setAttribute("src", "images/header-bg2.jpg");
+  // }
 };
 
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
