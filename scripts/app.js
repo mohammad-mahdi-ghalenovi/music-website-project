@@ -1,6 +1,11 @@
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   spaceBetween: 20,
+  breakpoints: {
+    425: {
+      slidesPerView: 1,
+    },
+  },
 });
 
 let swiper2 = new Swiper(".mySwiper2", {
