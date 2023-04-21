@@ -1,9 +1,13 @@
-let swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   spaceBetween: 20,
   breakpoints: {
-    425: {
+    1025: {
+      slidesPerView: 2,
+    },
+    "@0.00": {
       slidesPerView: 1,
+      spaceBetween: 10,
     },
   },
 });
@@ -21,19 +25,6 @@ let swiper2 = new Swiper(".mySwiper2", {
     modifier: 1,
     slideShadows: true,
   },
-});
-
-// 460
-window.addEventListener("resize", function () {
-  if (window.innerWidth < 675) {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg3.jpg");
-  } else {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg2.jpg");
-  }
 });
 
 // header
@@ -312,27 +303,27 @@ function iconHovers() {
 window.onload = function () {
   bottomHeaderImg.classList.add("header-img-active");
   document.body.style.opacity = 1;
-  if (window.innerWidth < 460) {
-    //swiper onload template
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    });
-  } else {
-    swiper = new Swiper(".mySwiper", {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    });
-  }
-  if (window.innerWidth < 675) {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg3.jpg");
-  } else {
-    document
-      .querySelector(".header-content__img")
-      .setAttribute("src", "images/header-bg2.jpg");
-  }
+  // if (window.innerWidth < 460) {
+  //   //swiper onload template
+  //   swiper = new Swiper(".mySwiper", {
+  //     slidesPerView: 1,
+  //     spaceBetween: 20,
+  //   });
+  // } else {
+  //   swiper = new Swiper(".mySwiper", {
+  //     slidesPerView: 2,
+  //     spaceBetween: 20,
+  //   });
+  // }
+  // if (window.innerWidth < 675) {
+  //   document
+  //     .querySelector(".header-content__img")
+  //     .setAttribute("src", "images/header-bg3.jpg");
+  // } else {
+  //   document
+  //     .querySelector(".header-content__img")
+  //     .setAttribute("src", "images/header-bg2.jpg");
+  // }
 };
 
 mainAudio.addEventListener("timeupdate", updatePorgrassBar);
