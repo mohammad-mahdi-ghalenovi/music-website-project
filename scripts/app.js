@@ -191,11 +191,14 @@ function findRelatedSongs() {
   createSearchedSongs(relatedSongs); //  createElement.js
 }
 
+let IsrelatedOp = false;
 function openRelatedSongs() {
+  IsrelatedOp = true;
   searchedSongsContainer.classList.add("related-songs-active");
 }
 
 function closeRelatedSongs() {
+  IsrelatedOp = false;
   searchedSongsContainer.classList.remove("related-songs-active");
 }
 
@@ -232,19 +235,15 @@ songs.forEach(function (music) {
 function createIntroMuics(music) {
   introSongsWrapper.innerHTML += `<div class="intro-song-content swiper-slide prevent-select ">
         <div class="intro-song__img">    
-              <div class="img" style="background-image : url(${
-                music.cover
-              } )" alt="" ></div>
+              <div class="img" style="background-image : url(${music.cover} )" alt="" ></div>
         </div>
     <div class="intro-song-infos"> 
-        <div class="intro-song__name">${(music.musicName)}</div>  
+        <div class="intro-song__name">${music.musicName}</div>  
        <div class="intro-song__artist">${music.artist}</div>  
     </div>  
          
        <div class="intro-song-control">
-               <div class="intro-control__play"><i class="fa fa-play" onclick="loadMusic(${
-                 music.id
-               })"></i></div> 
+               <div class="intro-control__play"><i class="fa fa-play" onclick="loadMusic(${music.id})"></i></div> 
                <div class="intro-control__like"><i class="fa fa-heart"></i></div>  
                 <div class="intro-control__download"><i class="fa fa-download"></i></div>   
                 <div class="intro-control__add"><i class="fa fa-plus"></i></div>  
@@ -350,3 +349,17 @@ musicplayerSettingBtn.addEventListener("click", openSettingHandler);
 headerSearchInput.addEventListener("input", findRelatedSongs);
 headerSearchInput.addEventListener("focus", openRelatedSongs);
 headerSearchInput.addEventListener("blur", closeRelatedSongs);
+window.addEventListener("keydown", (e) => {
+  let { keyCode } = e;
+  if (IsrelatedOp == false) {
+
+    if (keyCode == 32 && isPlaying == false) {
+      playMusic();
+    } else if (keyCode == 32 && isPlaying == true) {
+      pauseMusic();
+    }
+
+  } else {
+    return false;
+  }
+});
